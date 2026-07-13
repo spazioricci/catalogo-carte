@@ -68,10 +68,10 @@ jobs:
       - name: Costruisci il sito
         run: npm run build
 
+      # NB: niente `enablement: true` — riconfigura Pages come deploy da branch
+      # (pubblicherebbe la radice del repo, non dist/). La sorgente va lasciata
+      # su "GitHub Actions" nelle impostazioni del repo.
       - uses: actions/configure-pages@v5
-        with:
-          # Attiva Pages (sorgente = GitHub Actions) se non lo è già, senza passare dalla UI.
-          enablement: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
