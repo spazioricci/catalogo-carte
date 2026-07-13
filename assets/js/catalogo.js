@@ -7,7 +7,13 @@
 (function () {
   var root = document.getElementById("catalog");
   if (!root) return;
+  /* BASE = radice del sito (immagini, condivise fra le lingue).
+     HOME = radice della lingua: link alle schede e dataset tradotto.
+     T    = stringhe della lingua, iniettate dal template (scripts/i18n.mjs). */
   var BASE = root.getAttribute("data-base") || "";
+  var HOME = root.getAttribute("data-home") || "";
+  var LOCALE = root.getAttribute("data-locale") || "it-IT";
+  var T = JSON.parse(root.getAttribute("data-i18n") || "{}");
   var BATCH = 60;
 
   var elGrid    = document.getElementById("grid");
@@ -43,7 +49,7 @@
   }
 
   function fillSelect(sel, values, allLabel) {
-    values.sort(function (a, b) { return a.localeCompare(b, "it"); });
+    values.sort(function (a, b) { return a.localeCompare(b, LOCALE); });
     sel.appendChild(option("", allLabel));
     values.forEach(function (v) { sel.appendChild(option(v, v)); });
   }
@@ -56,10 +62,10 @@
       if (c.category)  categories[c.category] = 1;
       if (c.type)      types[c.type] = 1;
     });
-    fillSelect(elCont,    Object.keys(continents), "Tutti i continenti");
-    fillSelect(elCountry, Object.keys(countries),  "Tutte le nazioni");
-    fillSelect(elCat,     Object.keys(categories), "Tutte le categorie");
-    fillSelect(elType,    Object.keys(types),      "Tutti i tipi");
+    fillSelect(elCont,    Object.keys(continents), T.allContinents);
+    fillSelect(elCountry, Object.keys(countries),  T.allCountries);
+    fillSelect(elCat,     Object.keys(categories), T.allCategories);
+    fillSelect(elType,    Object.keys(types),      T.allTypes);
   }
 
   function apply() {
@@ -84,19 +90,19 @@
     view.sort(function (a, b) {
       switch (sort) {
         case "num-desc":   return b.num - a.num;
-        case "title-asc":  return (a.title || "￿").localeCompare(b.title || "￿", "it");
-        case "title-desc": return (b.title || "").localeCompare(a.title || "", "it");
-        case "country":    return (a.country || "").localeCompare(b.country || "", "it") || a.num - b.num;
+        case "title-asc":  return (a.title || "￿").localeCompare(b.title || "￿", LOCALE);
+        case "title-desc": return (b.title || "").localeCompare(a.title || "", LOCALE);
+        case "country":    return (a.country || "").localeCompare(b.country || "", LOCALE) || a.num - b.num;
         default:           return a.num - b.num; /* num-asc */
       }
     });
 
     elGrid.innerHTML = "";
     shown = 0;
-    elCount.textContent = view.length.toLocaleString("it-IT");
+    elCount.textContent = view.length.toLocaleString(LOCALE);
 
     if (view.length === 0) {
-      elGrid.innerHTML = '<div class="empty"><div class="suits"><span class="s-blk">♠</span> <span class="s-red">♥</span> <span class="s-red">♦</span> <span class="s-blk">♣</span></div>Nessun mazzo corrisponde ai criteri scelti.</div>';
+      elGrid.innerHTML = '<div class="empty"><div class="suits"><span class="s-blk">♠</span> <span class="s-red">♥</span> <span class="s-red">♦</span> <span class="s-blk">♣</span></div>' + esc(T.empty) + '</div>';
       return;
     }
     renderMore();
@@ -105,10 +111,10 @@
   function cardHTML(c) {
     var img = BASE + "assets/img/thumb/" + encodeURIComponent(c.cover);
     var ph  = BASE + "assets/img/placeholder.svg";
-    var title = c.title && c.title.trim() ? esc(c.title) : "Mazzo n. " + c.num;
+    var title = c.title && c.title.trim() ? esc(c.title) : T.deckNo + " " + c.num;
     var country = c.country ? '<span class="country">' + esc(c.country) + "</span>" : "";
     var type = c.type ? '<span class="tag">' + esc(c.type) + "</span>" : "";
-    return '<a class="deck-card" href="' + BASE + "mazzo/" + encodeURIComponent(c.id) + '/">' +
+    return '<a class="deck-card" href="' + HOME + "mazzo/" + encodeURIComponent(c.id) + '/">' +
       '<div class="frame">' +
         '<span class="num">' + c.num + "</span>" +
         '<img loading="lazy" decoding="async" src="' + img + '" alt="' + title + '" ' +
@@ -142,7 +148,7 @@
 
   function init(data) {
     ALL = data.cards || [];
-    if (elTotal) elTotal.textContent = ALL.length.toLocaleString("it-IT");
+    if (elTotal) elTotal.textContent = ALL.length.toLocaleString(LOCALE);
     buildFilters();
 
     /* pre-seleziona filtro da querystring (?continente= / ?categoria=) */
@@ -166,10 +172,10 @@
     apply();
   }
 
-  fetch(BASE + "data/cards.json")
+  fetch(HOME + "data/cards.json")
     .then(function (r) { return r.json(); })
     .then(init)
     .catch(function () {
-      elGrid.innerHTML = '<div class="empty">Impossibile caricare il catalogo. Riprova più tardi.</div>';
+      elGrid.innerHTML = '<div class="empty">' + esc(T.error) + '</div>';
     });
 })();

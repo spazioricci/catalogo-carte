@@ -1,11 +1,13 @@
 <!-- ===========================================================================
-  SCHEDA MAZZO  (templates/mazzo.html -> dist/mazzo/<id>/index.html)
-  Contesto = una CARD. Token (vedi docs/CONTRACT.md):
+  SCHEDA MAZZO  (templates/mazzo.html -> dist/mazzo/<id>/ e dist/en/mazzo/<id>/)
+  Contesto = una CARD (nella versione inglese nazione/continente/categoria sono
+  già tradotti da i18n.mjs; titolo, tipo e Curiosità restano in italiano).
+  Token (vedi docs/CONTRACT.md):
+    t, lang, base, home, altUrl, siteTitle, year, count
     id, num, title, continent, country, category, categoryCode, type, usState
     cover, deck, hasDeck, coverFull, coverThumb, deckFull
     trivia: { deckName, producer, year, notes[] }  (opzionale)
     prev, next: { id, title }  (opzionali)
-    siteTitle, base, year, count
   PRIVACY: nessun campo valore/prezzo esiste o va mostrato.
   ============================================================================ -->
 <link rel="stylesheet" href="{{base}}assets/css/style.css">
@@ -19,28 +21,31 @@
 <!-- ===== Header ===== -->
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="{{base}}">
+    <a class="brand" href="{{home}}">
       <span class="mark">&#9824;</span>
-      <span class="name">Catalogo <b>Carte</b></span>
+      <span class="name">{{t.brandA}} <b>{{t.brandB}}</b></span>
     </a>
     <nav class="site-nav">
-      <a href="{{base}}">Home</a>
-      <a href="{{base}}catalogo/">Catalogo</a>
-      <button class="theme-toggle" type="button" aria-label="Cambia tema">&#9681;</button>
+      <a href="{{home}}">{{t.navHome}}</a>
+      <a href="{{home}}catalogo/">{{t.navCatalog}}</a>
+      <a class="lang-switch" href="{{altUrl}}" title="{{t.altTitle}}">
+        <span class="flag" aria-hidden="true">{{t.altFlag}}</span><span class="lbl">{{t.altName}}</span>
+      </a>
+      <button class="theme-toggle" type="button" aria-label="{{t.themeToggle}}">&#9681;</button>
     </nav>
   </div>
 </header>
 
 <main class="wrap">
-  <nav class="breadcrumb" aria-label="Percorso">
-    <a href="{{base}}">Home</a><span class="sep">/</span>
-    <a href="{{base}}catalogo/">Catalogo</a><span class="sep">/</span>
+  <nav class="breadcrumb" aria-label="{{t.breadcrumb}}">
+    <a href="{{home}}">{{t.navHome}}</a><span class="sep">/</span>
+    <a href="{{home}}catalogo/">{{t.navCatalog}}</a><span class="sep">/</span>
     <span>{{title}}</span>
   </nav>
 
   <article class="deck-detail">
     <header class="head">
-      <span class="num-badge">Mazzo n. {{num}}</span>
+      <span class="num-badge">{{t.deckNo}} {{num}}</span>
       <h1>{{title}}</h1>
       <p class="subtitle">{{country}}{{#continent}} &middot; {{continent}}{{/continent}} &middot; {{category}}</p>
     </header>
@@ -49,23 +54,23 @@
       <!-- ===== Immagini ===== -->
       <div class="gallery{{^hasDeck}} single{{/hasDeck}}">
         <figure class="plate">
-          <button class="zoom" type="button" data-full="{{coverFull}}" aria-label="Ingrandisci la copertina">
+          <button class="zoom" type="button" data-full="{{coverFull}}" aria-label="{{t.zoomCover}}">
             <span class="frame">
-              <img loading="lazy" decoding="async" src="{{coverThumb}}" alt="Copertina di {{title}}"
+              <img loading="lazy" decoding="async" src="{{coverThumb}}" alt="{{t.altCover}} {{title}}"
                    onerror="this.onerror=null;this.src='{{base}}assets/img/placeholder.svg'">
             </span>
           </button>
-          <figcaption>Copertina</figcaption>
+          <figcaption>{{t.coverCaption}}</figcaption>
         </figure>
         {{#hasDeck}}
         <figure class="plate">
-          <button class="zoom" type="button" data-full="{{deckFull}}" aria-label="Ingrandisci la foto del mazzo">
+          <button class="zoom" type="button" data-full="{{deckFull}}" aria-label="{{t.zoomDeck}}">
             <span class="frame">
-              <img loading="lazy" decoding="async" src="{{deckFull}}" alt="Foto del mazzo {{title}}"
+              <img loading="lazy" decoding="async" src="{{deckFull}}" alt="{{t.altDeck}} {{title}}"
                    onerror="this.onerror=null;this.src='{{base}}assets/img/placeholder.svg'">
             </span>
           </button>
-          <figcaption>Il mazzo</figcaption>
+          <figcaption>{{t.deckCaption}}</figcaption>
         </figure>
         {{/hasDeck}}
       </div>
@@ -74,26 +79,29 @@
       <div>
         <div class="meta-panel">
           <dl>
-            <dt>Nazione</dt><dd>{{country}}</dd>
-            <dt>Continente</dt><dd>{{continent}}</dd>
-            <dt>Categoria</dt><dd class="accent">{{category}}</dd>
-            {{#type}}<dt>Tipo</dt><dd>{{type}}</dd>{{/type}}
-            {{#usState}}<dt>Stato USA</dt><dd>{{usState}}</dd>{{/usState}}
-            <dt>Riferimento</dt><dd>N. {{num}}</dd>
+            <dt>{{t.metaCountry}}</dt><dd>{{country}}</dd>
+            <dt>{{t.metaContinent}}</dt><dd>{{continent}}</dd>
+            <dt>{{t.metaCategory}}</dt><dd class="accent">{{category}}</dd>
+            {{#type}}<dt>{{t.metaType}}</dt><dd>{{type}}</dd>{{/type}}
+            {{#usState}}<dt>{{t.metaUsState}}</dt><dd>{{usState}}</dd>{{/usState}}
+            <dt>{{t.metaRef}}</dt><dd>{{t.refNo}} {{num}}</dd>
           </dl>
         </div>
 
         {{#trivia}}
         <section class="trivia" aria-labelledby="trivia-title">
           <div class="trivia-head">
-            <h2 id="trivia-title">Curiosità</h2>
+            <h2 id="trivia-title">{{t.triviaTitle}}</h2>
+            <!-- Le Curiosità arrivano dal foglio in italiano: sulla versione inglese
+                 il badge avvisa il lettore invece di lasciarlo davanti a testo opaco. -->
+            {{#t.triviaLangNote}}<span class="lang-note" lang="it">{{t.triviaLangNote}}</span>{{/t.triviaLangNote}}
             <span class="suits"><span class="s-blk">&#9824;</span> <span class="s-red">&#9829;</span> <span class="s-red">&#9830;</span> <span class="s-blk">&#9827;</span></span>
           </div>
-          <div class="trivia-body">
+          <div class="trivia-body" lang="it">
             <div class="ident">
-              {{#deckName}}<div><span class="k">Nome mazzo</span><span class="v">{{deckName}}</span></div>{{/deckName}}
-              {{#producer}}<div><span class="k">Produttore</span><span class="v">{{producer}}</span></div>{{/producer}}
-              {{#year}}<div><span class="k">Anno</span><span class="v">{{year}}</span></div>{{/year}}
+              {{#deckName}}<div><span class="k">{{t.triviaDeckName}}</span><span class="v">{{deckName}}</span></div>{{/deckName}}
+              {{#producer}}<div><span class="k">{{t.triviaProducer}}</span><span class="v">{{producer}}</span></div>{{/producer}}
+              {{#year}}<div><span class="k">{{t.triviaYear}}</span><span class="v">{{year}}</span></div>{{/year}}
             </div>
             <ul class="notes">
               {{#notes}}<li>{{.}}</li>{{/notes}}
@@ -105,28 +113,28 @@
     </div>
 
     <!-- ===== Navigazione tra mazzi ===== -->
-    <nav class="deck-nav" aria-label="Naviga tra i mazzi">
-      {{#prev}}<a class="prev" href="{{base}}mazzo/{{id}}/"><span class="dir">&larr; Precedente</span><span class="t">{{title}}</span></a>{{/prev}}
-      {{#next}}<a class="next" href="{{base}}mazzo/{{id}}/"><span class="dir">Successivo &rarr;</span><span class="t">{{title}}</span></a>{{/next}}
+    <nav class="deck-nav" aria-label="{{t.deckNav}}">
+      {{#prev}}<a class="prev" href="{{home}}mazzo/{{id}}/"><span class="dir">{{{t.navPrev}}}</span><span class="t">{{title}}</span></a>{{/prev}}
+      {{#next}}<a class="next" href="{{home}}mazzo/{{id}}/"><span class="dir">{{{t.navNext}}}</span><span class="t">{{title}}</span></a>{{/next}}
     </nav>
   </article>
 </main>
 
 <!-- ===== Lightbox ===== -->
-<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Immagine ingrandita">
-  <button class="close" type="button" aria-label="Chiudi">&times;</button>
+<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="{{t.lightbox}}">
+  <button class="close" type="button" aria-label="{{t.close}}">&times;</button>
   <img src="" alt="">
 </div>
 
 <!-- ===== Footer ===== -->
 <footer class="site-footer">
   <div class="wrap">
-    <a class="brand" href="{{base}}">
+    <a class="brand" href="{{home}}">
       <span class="mark" style="color:var(--green)">&#9824;</span>
-      <span class="name">Catalogo Carte di Luigi</span>
+      <span class="name">{{siteTitle}}</span>
     </a>
     <span class="suits"><span class="s-blk">&#9824;</span> <span class="s-red">&#9829;</span> <span class="s-red">&#9830;</span> <span class="s-blk">&#9827;</span></span>
-    <p>{{count}} mazzi catalogati &middot; &copy; {{year}} &middot; Collezione privata</p>
+    <p>{{count}} {{t.footerDecks}} &middot; &copy; {{year}} &middot; {{t.footerPrivate}}</p>
   </div>
 </footer>
 

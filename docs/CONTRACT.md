@@ -18,18 +18,38 @@ Niente altro (no logica, no filtri). I commenti HTML `<!-- ... -->` sono liberi.
   `templates/_partials/*` (opzionale), `assets/css/*.css`, `assets/js/*.js`.
 - **Codice**: `scripts/build.mjs`, `scripts/serve.mjs`, `scripts/fetch-images.mjs`.
 
+## Due lingue: `{{base}}` e `{{home}}` non sono la stessa cosa
+Ogni template è reso **due volte** (italiano in `dist/`, inglese in `dist/en/`), quindi
+esistono due prefissi diversi e vanno usati per cose diverse:
+- `{{base}}` → radice del **SITO**: solo per asset condivisi fra le lingue.
+  `{{base}}assets/css/…`, `{{base}}assets/img/…`, `{{base}}assets/js/…`
+- `{{home}}` → radice della **LINGUA**: tutti i link interni e i dati.
+  `{{home}}catalogo/`, `{{home}}mazzo/<id>/`, `{{home}}data/cards.json`
+
+Usare `{{base}}` per un link interno porterebbe l'utente inglese sulla pagina italiana.
+
+| pagina            | it: base / home   | en: base / home        |
+|-------------------|-------------------|------------------------|
+| home              | `""` / `""`       | `"../"` / `""`         |
+| `catalogo/`       | `"../"` / `"../"` | `"../../"` / `"../"`   |
+| `mazzo/<id>/`     | `"../../"` × 2    | `"../../../"` / `"../../"` |
+
 ## Percorsi immagine (relativi alla root del sito servito)
-- Copertina piena: `assets/img/full/<cover>` — thumbnail: `assets/img/thumb/<cover>`
-- Foto mazzo piena: `assets/img/full/<deck>` (può mancare)
-Ogni pagina riceve `{{base}}` = prefisso per tornare alla root:
-`""` per la home, `"../"` per `/catalogo/`, `"../../"` per `/mazzo/<id>/`.
-Usare SEMPRE `{{base}}assets/...`, `{{base}}catalogo/`, `{{base}}mazzo/<id>/`.
+- Copertina piena: `{{base}}assets/img/full/<cover>` — thumbnail: `{{base}}assets/img/thumb/<cover>`
+- Foto mazzo piena: `{{base}}assets/img/full/<deck>` (può mancare)
 Placeholder per immagini mancanti: `{{base}}assets/img/placeholder.svg` (lo fornisce il Design).
 
 ## Variabili per pagina
 
 ### Comuni a tutte le pagine
-`siteTitle` (string), `base` (string), `year` (string, anno corrente), `count` (int, tot mazzi).
+`siteTitle` (string, tradotto), `base`, `home`, `lang` (`"it"`/`"en"`),
+`altUrl` (stessa pagina nell'altra lingua → bandierina in header),
+`year` (string, anno corrente), `count` (int, tot mazzi),
+`t` (dizionario della lingua: `{{t.navHome}}`, `{{t.metaCountry}}`, … vedi `scripts/i18n.mjs`).
+
+**Nessuna stringa visibile va scritta a mano nei template**: se serve un testo nuovo,
+si aggiunge una chiave a `UI.it` e `UI.en` in `scripts/i18n.mjs` e si usa `{{t.chiave}}`.
+Le stringhe che contengono HTML (`&rarr;`, `<em>`) si rendono con `{{{t.chiave}}}`.
 
 ### templates/index.html (home → dist/index.html)
 - `count`, `countCountries`, `countContinents`, `countCategories` (int)
@@ -37,15 +57,19 @@ Placeholder per immagini mancanti: `{{base}}assets/img/placeholder.svg` (lo forn
 - `categories`: array di `{ code, name, count }` (ordinato per count desc)
 - `featured`: array di card “in evidenza” (quelle con curiosità), ogni elemento con i campi CARD sotto.
 
-### templates/catalogo.html (→ dist/catalogo/index.html)
+### templates/catalogo.html (→ dist/catalogo/ e dist/en/catalogo/)
 Guscio statico. La griglia, i filtri (Continente/Nazione/Categoria/Tipo), la ricerca e
-l'ordinamento sono costruiti **lato client** da `assets/js/catalogo.js` leggendo `{{base}}data/cards.json`.
+l'ordinamento sono costruiti **lato client** da `assets/js/catalogo.js` leggendo `{{home}}data/cards.json`
+(il dataset della lingua: quello inglese ha nazioni/continenti/categorie già tradotti).
 Il template deve contenere: gli elementi dei filtri (possono essere popolati via JS), un input di ricerca,
 un contenitore `<div id="grid"></div>` e un contatore risultati `<span id="count"></span>`.
+`catalogo.js` è un unico file per entrambe le lingue: legge quel che gli serve dagli attributi di
+`#catalog` → `data-base`, `data-home`, `data-locale`, `data-i18n` (JSON di `t.js`, token `{{i18nJson}}`).
 Nessuna variabile card server-side qui.
 
-### templates/mazzo.html (→ dist/mazzo/<id>/index.html, una per card)
-Contesto = una CARD con i campi:
+### templates/mazzo.html (→ dist/mazzo/<id>/ e dist/en/mazzo/<id>/, una per card)
+Contesto = una CARD con i campi (nella build inglese `continent`, `country` e `category`
+arrivano già tradotti; `title`, `type` e `trivia` restano in italiano):
 - `id, num, title, continent, country, category, categoryCode, type, usState`
 - `cover` (basename), `deck` (basename o vuoto)
 - `hasDeck` (bool), `coverFull`, `coverThumb`, `deckFull` (stringhe di percorso già pronte con `{{base}}`)
@@ -59,5 +83,6 @@ Vedi CLAUDE.md per lo schema completo di `cards.json`. In `catalogo.js` i percor
 vanno composti come `assets/img/thumb/<cover>` (thumb in griglia) e link a `mazzo/<id>/`.
 
 ## Note UX minime richieste
-- Lingua: italiano. Tutto responsive; nessuna richiesta di rete esterna (font/dati locali).
+- Lingue: italiano (sorgente) e inglese, con bandierina di scambio in header (`{{altUrl}}`).
+  Tutto responsive; nessuna richiesta di rete esterna (font/dati locali).
 - Il catalogo deve reggere ~1244 elementi fluido (paginazione o rendering incrementale nel JS).

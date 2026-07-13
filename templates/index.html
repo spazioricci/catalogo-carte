@@ -1,7 +1,11 @@
 <!-- ===========================================================================
-  HOME  (templates/index.html -> dist/index.html)
+  HOME  (templates/index.html -> dist/index.html e dist/en/index.html)
   Token attesi (vedi docs/CONTRACT.md):
-    siteTitle, base, year, count, countCountries, countContinents, countCategories
+    t (dizionario lingua, vedi scripts/i18n.mjs), lang, siteTitle, year, count,
+    countCountries, countContinents, countCategories
+    base    -> radice del SITO: immagini e CSS, condivisi fra le lingue
+    home    -> radice della LINGUA: tutti i link interni
+    altUrl  -> stessa pagina nell'altra lingua (bandierina in header)
     continents: [{ name, count, slug }]
     categories: [{ code, name, count }]
     featured:   [ card ... ]  con almeno: id, num, title, country, type, cover
@@ -20,14 +24,17 @@
 <!-- ===== Header (duplicato in tutti i template) ===== -->
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="{{base}}">
+    <a class="brand" href="{{home}}">
       <span class="mark">&#9824;</span>
-      <span class="name">Catalogo <b>Carte</b></span>
+      <span class="name">{{t.brandA}} <b>{{t.brandB}}</b></span>
     </a>
     <nav class="site-nav">
-      <a href="{{base}}" aria-current="page">Home</a>
-      <a href="{{base}}catalogo/">Catalogo</a>
-      <button class="theme-toggle" type="button" aria-label="Cambia tema">&#9681;</button>
+      <a href="{{home}}" aria-current="page">{{t.navHome}}</a>
+      <a href="{{home}}catalogo/">{{t.navCatalog}}</a>
+      <a class="lang-switch" href="{{altUrl}}" title="{{t.altTitle}}">
+        <span class="flag" aria-hidden="true">{{t.altFlag}}</span><span class="lbl">{{t.altName}}</span>
+      </a>
+      <button class="theme-toggle" type="button" aria-label="{{t.themeToggle}}">&#9681;</button>
     </nav>
   </div>
 </header>
@@ -36,22 +43,18 @@
   <!-- ===== Hero ===== -->
   <section class="hero">
     <div class="wrap">
-      <p class="eyebrow">Collezione privata di Luigi</p>
-      <h1>Un <em>archivio</em> di carte da gioco dal mondo</h1>
-      <p class="lead">
-        Oltre milleduecento mazzi raccolti in anni di ricerca: souvenir, edizioni
-        d'autore, carte tradizionali e rarità da ogni continente. Sfogliali per
-        nazione, categoria o produttore.
-      </p>
+      <p class="eyebrow">{{t.homeEyebrow}}</p>
+      <h1>{{{t.homeH1}}}</h1>
+      <p class="lead">{{t.homeLead}}</p>
       <div class="rule-suits">
         <span class="suits"><span class="s-blk">&#9824;</span> <span class="s-red">&#9829;</span> <span class="s-red">&#9830;</span> <span class="s-blk">&#9827;</span></span>
       </div>
 
       <div class="stats">
-        <div class="stat"><span class="num">{{count}}</span><span class="lbl">Mazzi</span></div>
-        <div class="stat"><span class="num">{{countCountries}}</span><span class="lbl">Nazioni</span></div>
-        <div class="stat"><span class="num">{{countContinents}}</span><span class="lbl">Continenti</span></div>
-        <div class="stat"><span class="num">{{countCategories}}</span><span class="lbl">Categorie</span></div>
+        <div class="stat"><span class="num">{{count}}</span><span class="lbl">{{t.statDecks}}</span></div>
+        <div class="stat"><span class="num">{{countCountries}}</span><span class="lbl">{{t.statCountries}}</span></div>
+        <div class="stat"><span class="num">{{countContinents}}</span><span class="lbl">{{t.statContinents}}</span></div>
+        <div class="stat"><span class="num">{{countCategories}}</span><span class="lbl">{{t.statCategories}}</span></div>
       </div>
     </div>
   </section>
@@ -61,14 +64,14 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Con curiosità e schede</p>
-          <h2>Mazzi in evidenza</h2>
+          <p class="eyebrow">{{t.featuredEyebrow}}</p>
+          <h2>{{t.featuredTitle}}</h2>
         </div>
-        <a class="link" href="{{base}}catalogo/">Vedi tutto il catalogo &rarr;</a>
+        <a class="link" href="{{home}}catalogo/">{{{t.featuredLink}}}</a>
       </div>
       <div class="deck-grid">
         {{#featured}}
-        <a class="deck-card" href="{{base}}mazzo/{{id}}/">
+        <a class="deck-card" href="{{home}}mazzo/{{id}}/">
           <div class="frame">
             <span class="num">{{num}}</span>
             <img loading="lazy" decoding="async"
@@ -93,13 +96,13 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Sfoglia per provenienza</p>
-          <h2>Continenti</h2>
+          <p class="eyebrow">{{t.continentsEyebrow}}</p>
+          <h2>{{t.continentsTitle}}</h2>
         </div>
       </div>
       <div class="shortcut-grid">
         {{#continents}}
-        <a class="shortcut" href="{{base}}catalogo/?continente={{name}}">
+        <a class="shortcut" href="{{home}}catalogo/?continente={{name}}">
           <span class="name">{{name}}</span>
           <span class="count">{{count}}</span>
         </a>
@@ -113,13 +116,13 @@
     <div class="wrap">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Sfoglia per tema</p>
-          <h2>Categorie</h2>
+          <p class="eyebrow">{{t.categoriesEyebrow}}</p>
+          <h2>{{t.categoriesTitle}}</h2>
         </div>
       </div>
       <div class="chip-row">
         {{#categories}}
-        <a class="chip" href="{{base}}catalogo/?categoria={{name}}">
+        <a class="chip" href="{{home}}catalogo/?categoria={{name}}">
           {{name}} <span class="c">{{count}}</span>
         </a>
         {{/categories}}
@@ -131,12 +134,12 @@
 <!-- ===== Footer (duplicato in tutti i template) ===== -->
 <footer class="site-footer">
   <div class="wrap">
-    <a class="brand" href="{{base}}">
+    <a class="brand" href="{{home}}">
       <span class="mark" style="color:var(--green)">&#9824;</span>
-      <span class="name">Catalogo Carte di Luigi</span>
+      <span class="name">{{siteTitle}}</span>
     </a>
     <span class="suits"><span class="s-blk">&#9824;</span> <span class="s-red">&#9829;</span> <span class="s-red">&#9830;</span> <span class="s-blk">&#9827;</span></span>
-    <p>{{count}} mazzi catalogati &middot; &copy; {{year}} &middot; Collezione privata</p>
+    <p>{{count}} {{t.footerDecks}} &middot; &copy; {{year}} &middot; {{t.footerPrivate}}</p>
   </div>
 </footer>
 

@@ -136,6 +136,23 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; mar
 }
 .theme-toggle:hover { color: var(--ink); border-color: var(--brass); }
 
+/* Cambio lingua: bandierina + sigla. Sotto i 640px resta la sola bandierina,
+   che da sola dice già tutto e non ruba spazio alla barra. */
+.lang-switch {
+  display: inline-flex; align-items: center; gap: .45rem;
+  border: 1px solid var(--line); border-radius: 999px; padding: .3rem .7rem;
+}
+.lang-switch:hover { border-color: var(--brass); }
+.lang-switch .flag { font-size: 1.05rem; line-height: 1; border-bottom: 0; }
+.lang-switch .lbl { font-size: .72rem; }
+
+/* Badge "in Italian" accanto al titolo Curiosità nella versione inglese. */
+.lang-note {
+  font-size: .7rem; text-transform: uppercase; letter-spacing: .12em;
+  color: var(--ink-faint); border: 1px solid var(--line); border-radius: 999px;
+  padding: .15rem .5rem; white-space: nowrap;
+}
+
 /* ---------- Hero (home) ---------- */
 .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
 /* trama "guilloché" da dorso di carta, tenue */
@@ -390,6 +407,8 @@ figure.plate figcaption {
   body { font-size: 16px; }
   .deck-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; }
   .gallery { grid-template-columns: 1fr; }
+  .lang-switch { padding: .3rem .5rem; }
+  .lang-switch .lbl { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -6,6 +6,7 @@ import {
 } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join, relative } from "node:path";
+import { LANGS, langDir, UI, translateDataset } from "./i18n.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -156,17 +157,21 @@ function writePage(distDir, relPath, html) {
 // I template sono frammenti: tutto ciò che precede <!--BODY--> (link CSS + script
 // anti-flash del tema) va nel <head> generato; il resto nel <body>. Qui aggiungiamo
 // lo scheletro del documento con charset, viewport (essenziale per il responsive) e title.
-function wrapPage(rendered, title) {
+// hreflang: dice ai motori di ricerca che la stessa pagina esiste nelle due lingue.
+function wrapPage(rendered, { title, lang, itHref, enHref }) {
   const MARK = "<!--BODY-->";
   let head = "", body = rendered;
   const i = rendered.indexOf(MARK);
   if (i !== -1) { head = rendered.slice(0, i).trim(); body = rendered.slice(i + MARK.length); }
   return `<!doctype html>
-<html lang="it">
+<html lang="${lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${escapeHtml(title)}</title>
+<link rel="alternate" hreflang="it" href="${escapeHtml(itHref || "./")}">
+<link rel="alternate" hreflang="en" href="${escapeHtml(enHref || "./")}">
+<link rel="alternate" hreflang="x-default" href="${escapeHtml(itHref || "./")}">
 ${head}
 </head>
 <body>${body}</body>
@@ -174,16 +179,34 @@ ${head}
 `;
 }
 
+// Percorsi relativi di una pagina, dato il suo path DENTRO la lingua
+// ("", "catalogo/", "mazzo/<id>/"). Le immagini sono condivise dalle due lingue e
+// stanno in radice (base); i link interni restano dentro la lingua (home).
+function paths(rel, lang) {
+  const depth = rel ? rel.split("/").filter(Boolean).length : 0;
+  const home = "../".repeat(depth);                       // radice della lingua
+  const base = "../".repeat(depth + (lang === "it" ? 0 : 1)); // radice del sito
+  const other = lang === "it" ? "en" : "it";
+  return {
+    base,
+    home,
+    lang,
+    altUrl: `${base}${langDir(other)}${rel}`,
+    itHref: `${base}${rel}`,
+    enHref: `${base}en/${rel}`,
+  };
+}
+
 // Arricchisce una card con i campi derivati del CONTRACT.
-function enrichCard(card, base, common, prev, next) {
+function enrichCard(card, p, common, prev, next) {
   return {
     ...common,
     ...card,
-    base,
+    ...p,
     hasDeck: !!card.deck,
-    coverFull: `${base}assets/img/full/${card.cover}`,
-    coverThumb: `${base}assets/img/thumb/${card.cover}`,
-    deckFull: card.deck ? `${base}assets/img/full/${card.deck}` : "",
+    coverFull: `${p.base}assets/img/full/${card.cover}`,
+    coverThumb: `${p.base}assets/img/thumb/${card.cover}`,
+    deckFull: card.deck ? `${p.base}assets/img/full/${card.deck}` : "",
     prev: prev ? { id: prev.id, title: prev.title } : null,
     next: next ? { id: next.id, title: next.title } : null,
   };
@@ -208,11 +231,8 @@ export function build({ tplDir, distDir, dataFile, assetsDir } = {}) {
     );
   }
 
-  const data = JSON.parse(readFileSync(dataFile, "utf-8"));
-  const cards = data.cards;
-  const siteTitle = "Catalogo Carte di Luigi";
+  const source = JSON.parse(readFileSync(dataFile, "utf-8"));
   const year = String(new Date().getFullYear());
-  const common = { siteTitle, year, count: data.count };
 
   const tplIndex = readFileSync(join(tplDir, "index.html"), "utf-8");
   const tplCat = readFileSync(join(tplDir, "catalogo.html"), "utf-8");
@@ -224,65 +244,89 @@ export function build({ tplDir, distDir, dataFile, assetsDir } = {}) {
 
   let pages = 0;
 
-  // --- HOME ---
-  const countCountries = new Set(cards.map((c) => c.country).filter(Boolean)).size;
+  // Le due lingue condividono immagini e struttura: stessa build, dizionario diverso.
+  // Italiano in radice (è la lingua sorgente), inglese sotto en/.
+  for (const lang of LANGS) {
+    const t = UI[lang];
+    const data = translateDataset(source, lang);
+    const cards = data.cards;
+    const outDir = join(distDir, langDir(lang));
+    const common = { t, siteTitle: t.siteTitle, year, count: data.count };
 
-  const contCounts = new Map();
-  for (const c of cards) if (c.continent) contCounts.set(c.continent, (contCounts.get(c.continent) || 0) + 1);
-  const continents = data.continents
-    .filter((name) => contCounts.has(name))
-    .map((name) => ({ name, count: contCounts.get(name), slug: slug(name) }));
+    // --- HOME ---
+    const countCountries = new Set(cards.map((c) => c.country).filter(Boolean)).size;
 
-  const catCounts = new Map();
-  for (const c of cards) {
-    const code = c.categoryCode || "";
-    if (!catCounts.has(code)) catCounts.set(code, { code, name: c.category || data.categories[code] || "Non categorizzato", count: 0 });
-    catCounts.get(code).count++;
-  }
-  const categories = [...catCounts.values()].sort((a, b) => b.count - a.count);
+    const contCounts = new Map();
+    for (const c of cards) if (c.continent) contCounts.set(c.continent, (contCounts.get(c.continent) || 0) + 1);
+    const continents = data.continents
+      .filter((name) => contCounts.has(name))
+      .map((name) => ({ name, count: contCounts.get(name), slug: slug(name) }));
 
-  const featured = cards
-    .filter((c) => c.trivia)
-    .slice(0, 8)
-    .map((c) => enrichCard(c, "", common, null, null));
+    const catCounts = new Map();
+    for (const c of cards) {
+      const code = c.categoryCode || "";
+      if (!catCounts.has(code)) catCounts.set(code, { code, name: c.category || data.categories[code] || "", count: 0 });
+      catCounts.get(code).count++;
+    }
+    const categories = [...catCounts.values()].sort((a, b) => b.count - a.count);
 
-  const homeCtx = {
-    ...common,
-    base: "",
-    count: data.count,
-    countCountries,
-    countContinents: continents.length,
-    countCategories: categories.length,
-    continents,
-    categories,
-    featured,
-  };
-  writePage(distDir, "index.html", wrapPage(render(tplIndex, homeCtx), siteTitle));
-  pages++;
+    const pHome = paths("", lang);
+    const featured = cards
+      .filter((c) => c.trivia)
+      .slice(0, 8)
+      .map((c) => enrichCard(c, pHome, common, null, null));
 
-  // --- CATALOGO (guscio statico) ---
-  writePage(distDir, join("catalogo", "index.html"),
-    wrapPage(render(tplCat, { ...common, base: "../" }), `Catalogo — ${siteTitle}`));
-  pages++;
-
-  // --- SCHEDE MAZZO ---
-  for (let i = 0; i < cards.length; i++) {
-    const ctx = enrichCard(cards[i], "../../", common, cards[i - 1], cards[i + 1]);
-    const title = `${cards[i].title || "Mazzo n. " + cards[i].num} — ${siteTitle}`;
-    writePage(distDir, join("mazzo", cards[i].id, "index.html"), wrapPage(render(tplMazzo, ctx), title));
+    const homeCtx = {
+      ...common,
+      ...pHome,
+      countCountries,
+      countContinents: continents.length,
+      countCategories: categories.length,
+      continents,
+      categories,
+      featured,
+    };
+    writePage(outDir, "index.html",
+      wrapPage(render(tplIndex, homeCtx), { title: t.siteTitle, ...pHome }));
     pages++;
+
+    // --- CATALOGO (guscio statico) ---
+    const pCat = paths("catalogo/", lang);
+    const catCtx = {
+      ...common,
+      ...pCat,
+      // catalogo.js prende da qui le sue stringhe: un solo dizionario per tutto il sito.
+      i18nJson: JSON.stringify(t.js),
+      locale: t.locale,
+    };
+    writePage(outDir, join("catalogo", "index.html"),
+      wrapPage(render(tplCat, catCtx), { title: `${t.catalogTitle} — ${t.siteTitle}`, ...pCat }));
+    pages++;
+
+    // --- SCHEDE MAZZO ---
+    for (let i = 0; i < cards.length; i++) {
+      const card = cards[i];
+      const p = paths(`mazzo/${card.id}/`, lang);
+      const ctx = enrichCard(card, p, common, cards[i - 1], cards[i + 1]);
+      const title = `${card.title || `${t.deckNo} ${card.num}`} — ${t.siteTitle}`;
+      writePage(outDir, join("mazzo", card.id, "index.html"),
+        wrapPage(render(tplMazzo, ctx), { title, ...p }));
+      pages++;
+    }
+
+    // --- Dati serviti al client (tradotti per l'inglese) ---
+    mkdirSync(join(outDir, "data"), { recursive: true });
+    writeFileSync(join(outDir, "data", "cards.json"), JSON.stringify(data));
   }
 
-  // --- Copia asset e dati ---
+  // --- Asset condivisi dalle due lingue ---
   const nAssets = copyDir(assetsDir, join(distDir, "assets"));
-  mkdirSync(join(distDir, "data"), { recursive: true });
-  copyFileSync(dataFile, join(distDir, "data", "cards.json"));
   // NON copiare data/source.csv né data/categories.json (privacy/inutili).
 
   // Su GitHub Pages evita che Jekyll reinterpreti l'output.
   writeFileSync(join(distDir, ".nojekyll"), "");
 
-  return { pages, cardPages: cards.length, nAssets, distDir };
+  return { pages, cardPages: source.cards.length, langs: LANGS, nAssets, distDir };
 }
 
 // Esecuzione diretta
@@ -290,7 +334,8 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   try {
     const r = build();
     console.log(`OK  ${r.pages} pagine generate in ${relative(ROOT, r.distDir) || r.distDir}`);
-    console.log(`    home + catalogo + ${r.cardPages} schede mazzo | ${r.nAssets} file asset copiati`);
+    console.log(`    lingue: ${r.langs.join(", ")} | per lingua: home + catalogo + ${r.cardPages} schede mazzo`);
+    console.log(`    ${r.nAssets} file asset copiati (condivisi fra le lingue)`);
   } catch (e) {
     if (e.code === "NO_TEMPLATES") { console.error(`ATTENZIONE  ${e.message}`); process.exit(1); }
     throw e;

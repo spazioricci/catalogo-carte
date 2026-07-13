@@ -1,8 +1,9 @@
 <!-- ===========================================================================
-  CATALOGO  (templates/catalogo.html -> dist/catalogo/index.html)
+  CATALOGO  (templates/catalogo.html -> dist/catalogo/ e dist/en/catalogo/)
   Guscio statico. Griglia, filtri, ricerca e ordinamento sono costruiti
-  lato client da assets/js/catalogo.js leggendo {{base}}data/cards.json.
-  Token usati: siteTitle, base, year, count.
+  lato client da assets/js/catalogo.js leggendo {{home}}data/cards.json
+  (il dataset della lingua: quello inglese ha nazioni/categorie tradotte).
+  Token: t, lang, siteTitle, year, count, base, home, altUrl, i18nJson, locale.
   ============================================================================ -->
 <link rel="stylesheet" href="{{base}}assets/css/style.css">
 <script>
@@ -15,24 +16,31 @@
 <!-- ===== Header ===== -->
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="{{base}}">
+    <a class="brand" href="{{home}}">
       <span class="mark">&#9824;</span>
-      <span class="name">Catalogo <b>Carte</b></span>
+      <span class="name">{{t.brandA}} <b>{{t.brandB}}</b></span>
     </a>
     <nav class="site-nav">
-      <a href="{{base}}">Home</a>
-      <a href="{{base}}catalogo/" aria-current="page">Catalogo</a>
-      <button class="theme-toggle" type="button" aria-label="Cambia tema">&#9681;</button>
+      <a href="{{home}}">{{t.navHome}}</a>
+      <a href="{{home}}catalogo/" aria-current="page">{{t.navCatalog}}</a>
+      <a class="lang-switch" href="{{altUrl}}" title="{{t.altTitle}}">
+        <span class="flag" aria-hidden="true">{{t.altFlag}}</span><span class="lbl">{{t.altName}}</span>
+      </a>
+      <button class="theme-toggle" type="button" aria-label="{{t.themeToggle}}">&#9681;</button>
     </nav>
   </div>
 </header>
 
-<main id="catalog" data-base="{{base}}">
+<main id="catalog"
+      data-base="{{base}}"
+      data-home="{{home}}"
+      data-locale="{{locale}}"
+      data-i18n="{{i18nJson}}">
   <section class="catalog-head">
     <div class="wrap">
-      <p class="eyebrow">L'intera collezione</p>
-      <h1>Catalogo dei mazzi</h1>
-      <p><span id="total">{{count}}</span> mazzi da sfogliare, filtrare e cercare.</p>
+      <p class="eyebrow">{{t.catalogEyebrow}}</p>
+      <h1>{{t.catalogH1}}</h1>
+      <p><span id="total">{{count}}</span> {{t.catalogLead}}</p>
     </div>
   </section>
 
@@ -40,26 +48,26 @@
   <div class="toolbar">
     <div class="wrap">
       <label class="search">
-        <span class="visually-hidden"></span>
-        <input id="q" type="search" placeholder="Cerca per titolo, nazione, produttore&hellip;" autocomplete="off">
+        <span class="visually-hidden">{{t.searchLabel}}</span>
+        <input id="q" type="search" placeholder="{{t.searchPlaceholder}}" autocomplete="off">
       </label>
-      <select id="f-continent" class="select" aria-label="Filtra per continente"></select>
-      <select id="f-country"   class="select" aria-label="Filtra per nazione"></select>
-      <select id="f-category"  class="select" aria-label="Filtra per categoria"></select>
-      <select id="f-type"      class="select" aria-label="Filtra per tipo"></select>
-      <select id="f-sort" class="select" aria-label="Ordina">
-        <option value="num-asc">N. crescente</option>
-        <option value="num-desc">N. decrescente</option>
-        <option value="title-asc">Titolo A&rarr;Z</option>
-        <option value="title-desc">Titolo Z&rarr;A</option>
-        <option value="country">Nazione</option>
+      <select id="f-continent" class="select" aria-label="{{t.filterContinent}}"></select>
+      <select id="f-country"   class="select" aria-label="{{t.filterCountry}}"></select>
+      <select id="f-category"  class="select" aria-label="{{t.filterCategory}}"></select>
+      <select id="f-type"      class="select" aria-label="{{t.filterType}}"></select>
+      <select id="f-sort" class="select" aria-label="{{t.sortLabel}}">
+        <option value="num-asc">{{t.sortNumAsc}}</option>
+        <option value="num-desc">{{t.sortNumDesc}}</option>
+        <option value="title-asc">{{{t.sortTitleAsc}}}</option>
+        <option value="title-desc">{{{t.sortTitleDesc}}}</option>
+        <option value="country">{{t.sortCountry}}</option>
       </select>
-      <button id="reset" class="btn-reset" type="button">Azzera</button>
+      <button id="reset" class="btn-reset" type="button">{{t.reset}}</button>
     </div>
   </div>
 
   <div class="wrap result-line">
-    <span id="count">0</span> mazzi trovati
+    <span id="count">0</span> {{t.resultsFound}}
   </div>
 
   <div class="wrap catalog-grid-wrap">
@@ -71,12 +79,12 @@
 <!-- ===== Footer ===== -->
 <footer class="site-footer">
   <div class="wrap">
-    <a class="brand" href="{{base}}">
+    <a class="brand" href="{{home}}">
       <span class="mark" style="color:var(--green)">&#9824;</span>
-      <span class="name">Catalogo Carte di Luigi</span>
+      <span class="name">{{siteTitle}}</span>
     </a>
     <span class="suits"><span class="s-blk">&#9824;</span> <span class="s-red">&#9829;</span> <span class="s-red">&#9830;</span> <span class="s-blk">&#9827;</span></span>
-    <p>{{count}} mazzi catalogati &middot; &copy; {{year}} &middot; Collezione privata</p>
+    <p>{{count}} {{t.footerDecks}} &middot; &copy; {{year}} &middot; {{t.footerPrivate}}</p>
   </div>
 </footer>
 
