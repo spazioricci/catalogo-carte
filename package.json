@@ -1,0 +1,19 @@
+{
+  "name": "catalogo-carte",
+  "version": "0.1.0",
+  "description": "Catalogo web della collezione di carte da gioco di Luigi",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "sheet": "node scripts/fetch-sheet.mjs",
+    "sync": "node scripts/sync-data.mjs",
+    "drive": "node scripts/fetch-drive.mjs",
+    "images": "node scripts/fetch-images.mjs",
+    "build": "node scripts/build.mjs",
+    "serve": "node scripts/serve.mjs",
+    "all": "npm run sheet && npm run sync && npm run drive && npm run images && npm run build"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  }
+}

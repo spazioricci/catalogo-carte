@@ -1,0 +1,16 @@
+node_modules/
+
+# Output di build: rigenerato da `npm run build` (e da GitHub Actions).
+dist/
+
+# SORGENTE PRIVATA — contiene "Ipotesi di valore di vendita". Mai committare.
+# Viene riscaricato da `npm run sheet`.
+data/source.csv
+
+# File di lavoro dello scarico immagini (originali Drive + log). Rigenerabili.
+data/_images_src/
+data/_drive_needed.json
+data/_dl.tsv
+data/_dl_fail.log
+
+scratch-preview.html

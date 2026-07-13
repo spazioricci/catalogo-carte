@@ -1,0 +1,8 @@
+<!-- self-test mazzo -->
+<h1>{{title}}</h1>
+<p>{{continent}} / {{country}} / {{category}} / {{type}}</p>
+<img src="{{coverFull}}" alt="{{title}}">
+{{#hasDeck}}<img src="{{deckFull}}" alt="mazzo di {{title}}">{{/hasDeck}}
+{{^hasDeck}}<img src="{{base}}assets/img/placeholder.svg" alt="">{{/hasDeck}}
+{{#trivia}}<section><b>{{deckName}}</b> — {{producer}} ({{year}})<ul>{{#notes}}<li>{{.}}</li>{{/notes}}</ul></section>{{/trivia}}
+<nav>{{#prev}}<a href="{{base}}mazzo/{{id}}/">&larr; {{title}}</a>{{/prev}}{{#next}}<a href="{{base}}mazzo/{{id}}/">{{title}} &rarr;</a>{{/next}}</nav>

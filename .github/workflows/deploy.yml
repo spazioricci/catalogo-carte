@@ -1,0 +1,69 @@
+name: Aggiorna e pubblica
+
+on:
+  schedule:
+    # 03:00 UTC = 05:00 in Italia (04:00 in inverno). Ogni giorno.
+    - cron: "0 3 * * *"
+  push:
+    branches: [main]
+  workflow_dispatch: # pulsante "Run workflow" per lanciarlo a mano
+
+permissions:
+  contents: write # per ricommittare cards.json, manifest e immagini nuove
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  aggiorna-e-pubblica:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      # data/source.csv è privato: vive solo qui, nel workspace effimero. Mai committato.
+      - name: Scarica il foglio Google
+        run: node scripts/fetch-sheet.mjs
+
+      - name: Rigenera cards.json
+        run: npm run sync
+
+      - name: Scarica le immagini nuove da Drive
+        run: node scripts/fetch-drive.mjs
+
+      - name: Genera full/ e thumb/
+        run: npm run images
+
+      - name: Committa i dati aggiornati
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/cards.json data/_drive_manifest.json assets/img
+          if git diff --cached --quiet; then
+            echo "Nessuna novità nel catalogo."
+          else
+            git commit -m "Aggiornamento catalogo dal foglio Google [skip ci]"
+            git push
+          fi
+
+      - name: Costruisci il sito
+        run: npm run build
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deploy
+        uses: actions/deploy-pages@v4

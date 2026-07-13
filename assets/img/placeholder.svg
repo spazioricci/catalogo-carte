@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" role="img" aria-label="Immagine non disponibile">
+  <defs>
+    <pattern id="lattice" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path d="M0 0V20M0 0H20" stroke="#1d4335" stroke-opacity="0.10" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f2efe6"/>
+      <stop offset="1" stop-color="#e7e3d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="400" fill="url(#bg)"/>
+  <rect width="300" height="400" fill="url(#lattice)"/>
+  <rect x="14" y="14" width="272" height="372" fill="none" stroke="#9a7b3c" stroke-opacity="0.55" stroke-width="1.5" rx="4"/>
+  <rect x="21" y="21" width="258" height="358" fill="none" stroke="#1d4335" stroke-opacity="0.35" stroke-width="1" rx="3"/>
+  <g transform="translate(150 168)" fill="#1d4335" fill-opacity="0.85" text-anchor="middle">
+    <text font-family="Georgia, serif" font-size="58" dy="20">&#9824;</text>
+  </g>
+  <g font-family="Georgia, serif" font-size="20" text-anchor="middle">
+    <text x="150" y="250" fill="#7a2e35" fill-opacity="0.75">&#9829; &#9830;</text>
+    <text x="150" y="284" fill="#55584a" fill-opacity="0.7">&#9827;</text>
+  </g>
+  <text x="150" y="340" font-family="system-ui, sans-serif" font-size="12" letter-spacing="2" text-anchor="middle" fill="#82836f">IMMAGINE IN ARRIVO</text>
+</svg>

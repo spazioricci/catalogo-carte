@@ -1,0 +1,8 @@
+<!-- self-test home -->
+<h1>{{siteTitle}}</h1>
+<p>base=[{{base}}] anno={{year}}</p>
+<p>{{count}} mazzi, {{countCountries}} nazioni, {{countContinents}} continenti, {{countCategories}} categorie</p>
+<ul>{{#continents}}<li>{{name}} ({{count}}) -> {{base}}catalogo/?c={{slug}}</li>{{/continents}}</ul>
+<ul>{{#categories}}<li>{{code}}:{{name}}={{count}}</li>{{/categories}}</ul>
+<div>{{#featured}}<article><img src="{{coverThumb}}" alt="{{title}}"><h3>{{title}}</h3>{{#hasDeck}}<span>ha mazzo</span>{{/hasDeck}}{{^hasDeck}}<span>solo copertina</span>{{/hasDeck}}</article>{{/featured}}</div>
+{{^featured}}<p>nessuna in evidenza</p>{{/featured}}
