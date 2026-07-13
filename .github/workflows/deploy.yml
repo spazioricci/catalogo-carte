@@ -50,6 +50,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # cards.json riporta un `generatedAt` nuovo a ogni run. Se è l'unica differenza
+          # il catalogo non è cambiato: senza questo scarto avremmo un commit inutile al giorno.
+          if git diff --quiet -I '"generatedAt"' -- data/cards.json; then
+            git restore data/cards.json
+          fi
+
           git add data/cards.json data/_drive_manifest.json assets/img
           if git diff --cached --quiet; then
             echo "Nessuna novità nel catalogo."
