@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-13T16:08:13.043Z",
-  "count": 1244,
+  "generatedAt": "2026-07-15T05:33:50.767Z",
+  "count": 1251,
   "categories": {
     "az3": "Pubblicità e Aziende",
     "994a3300": "Turismo e Paesaggi",
@@ -2581,6 +2581,20 @@
       }
     },
     {
+      "id": "1401a993",
+      "num": 58,
+      "title": "CABO VERDE",
+      "cover": "1401a993.Copertina.174809.jpg",
+      "deck": "1401a993.Mazzo.174809.jpg",
+      "continent": "Africa",
+      "country": "Capo Verde",
+      "categoryCode": "az1",
+      "category": "Città",
+      "type": "POKER",
+      "usState": "",
+      "trivia": null
+    },
+    {
       "id": "37147647",
       "num": 841,
       "title": "CAFE' CREME CIGARETTES",
@@ -3868,6 +3882,20 @@
       "trivia": null
     },
     {
+      "id": "9e190e30",
+      "num": 141,
+      "title": "COMO CALCIO 1907",
+      "cover": "9e190e30.Copertina.175147.jpg",
+      "deck": null,
+      "continent": "Europa",
+      "country": "Italia",
+      "categoryCode": "7496aab6",
+      "category": "Sport",
+      "type": "RAMINO DAL NEGRO",
+      "usState": "",
+      "trivia": null
+    },
+    {
       "id": "7aa8324b",
       "num": 865,
       "title": "COMPOSITORI CLASSICI",
@@ -4605,6 +4633,20 @@
       "categoryCode": "1227f527",
       "category": "Fumetti e Cartoon",
       "type": "POKER TRASPARENTI",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "9a44aebc",
+      "num": 54,
+      "title": "DISNEYLAND PARIS",
+      "cover": "9a44aebc.Copertina.171503.jpg",
+      "deck": "9a44aebc.Mazzo.171503.jpg",
+      "continent": "Europa",
+      "country": "Francia",
+      "categoryCode": "1227f527",
+      "category": "Fumetti e Cartoon",
+      "type": "POKER",
       "usState": "",
       "trivia": null
     },
@@ -5899,6 +5941,20 @@
       "categoryCode": "a9b11345",
       "category": "Bevande e Alcolici",
       "type": "POKER DAL NEGRO",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "5a02fe75",
+      "num": 7,
+      "title": "FRIDA KHALO",
+      "cover": "5a02fe75.Copertina.170808.jpg",
+      "deck": "5a02fe75.Mazzo.170808.jpg",
+      "continent": "Americhe",
+      "country": "Messico",
+      "categoryCode": "az7",
+      "category": "Monumenti e Architettura",
+      "type": "POKER PIATNIK",
       "usState": "",
       "trivia": null
     },
@@ -7284,6 +7340,34 @@
       "categoryCode": "994a3300",
       "category": "Turismo e Paesaggi",
       "type": "POKER",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "acc2b1fa",
+      "num": 57,
+      "title": "HUGO BOSS",
+      "cover": "acc2b1fa.Copertina.174514.jpg",
+      "deck": "acc2b1fa.Mazzo.174514.jpg",
+      "continent": "Europa",
+      "country": "Germania",
+      "categoryCode": "az3",
+      "category": "Pubblicità e Aziende",
+      "type": "POKER ROSSE E NERE",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "9585307e",
+      "num": 3,
+      "title": "HUGO PRATT",
+      "cover": "9585307e.Copertina.165654.jpg",
+      "deck": "9585307e.Mazzo.165654.jpg",
+      "continent": "Europa",
+      "country": "Italia",
+      "categoryCode": "1227f527",
+      "category": "Fumetti e Cartoon",
+      "type": "POKER SCARABEO",
       "usState": "",
       "trivia": null
     },
@@ -17273,6 +17357,20 @@
       "categoryCode": "az3",
       "category": "Pubblicità e Aziende",
       "type": "BELOTE GRIMAUD",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "6a1d7417",
+      "num": 230,
+      "title": "VOLLEY 85",
+      "cover": "6a1d7417.Copertina.175706.jpg",
+      "deck": null,
+      "continent": "Europa",
+      "country": "Italia",
+      "categoryCode": "7496aab6",
+      "category": "Sport",
+      "type": "RAMINO DAL NEGRO",
       "usState": "",
       "trivia": null
     },
