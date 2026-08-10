@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-15T05:33:50.767Z",
-  "count": 1251,
+  "generatedAt": "2026-08-10T04:39:01.633Z",
+  "count": 1255,
   "categories": {
     "az3": "Pubblicità e Aziende",
     "994a3300": "Turismo e Paesaggi",
@@ -478,6 +478,20 @@
       "categoryCode": "994a3300",
       "category": "Turismo e Paesaggi",
       "type": "POKER",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "170dc844",
+      "num": 248,
+      "title": "ALBERTVILLE 92",
+      "cover": "170dc844.Copertina.161044.jpg",
+      "deck": null,
+      "continent": "Europa",
+      "country": "Francia",
+      "categoryCode": "7496aab6",
+      "category": "Sport",
+      "type": "Belote",
       "usState": "",
       "trivia": null
     },
@@ -11124,6 +11138,20 @@
       "trivia": null
     },
     {
+      "id": "f7a9d566",
+      "num": 287,
+      "title": "MORANDO",
+      "cover": "f7a9d566.Copertina.162248.jpg",
+      "deck": "f7a9d566.Mazzo.162248.jpg",
+      "continent": "Europa",
+      "country": "Italia",
+      "categoryCode": "az3",
+      "category": "Pubblicità e Aziende",
+      "type": "Ramino Modiano",
+      "usState": "",
+      "trivia": null
+    },
+    {
       "id": "702e32cc",
       "num": 331,
       "title": "MORDILLO",
@@ -11451,6 +11479,20 @@
       "categoryCode": "az7",
       "category": "Monumenti e Architettura",
       "type": "POKER",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "d92d88b7",
+      "num": 288,
+      "title": "MUSEO SHANGHAI",
+      "cover": "d92d88b7.Copertina.163417.jpg",
+      "deck": "d92d88b7.Mazzo.163417.jpg",
+      "continent": "Asia",
+      "country": "Cina",
+      "categoryCode": "az7",
+      "category": "Monumenti e Architettura",
+      "type": "Poker",
       "usState": "",
       "trivia": null
     },
@@ -15006,6 +15048,20 @@
       "categoryCode": "b6152b31",
       "category": "Arte e Cultura",
       "type": "RAMINO MINI",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "e1ec9529",
+      "num": 295,
+      "title": "SOSSUSVLEI",
+      "cover": "e1ec9529.Copertina.185703.jpg",
+      "deck": "e1ec9529.Mazzo.185703.jpg",
+      "continent": "Africa",
+      "country": "Namibia",
+      "categoryCode": "az1",
+      "category": "Città",
+      "type": "POKER",
       "usState": "",
       "trivia": null
     },
