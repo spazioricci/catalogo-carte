@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-10T04:39:01.633Z",
-  "count": 1255,
+  "generatedAt": "2026-08-11T04:20:53.518Z",
+  "count": 1256,
   "categories": {
     "az3": "Pubblicità e Aziende",
     "994a3300": "Turismo e Paesaggi",
@@ -5675,6 +5675,20 @@
       "categoryCode": "7496aab6",
       "category": "Sport",
       "type": "RAMINO BLU",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "947c9a1b",
+      "num": 307,
+      "title": "FIGC",
+      "cover": "947c9a1b.Copertina.171124.jpg",
+      "deck": "947c9a1b.Mazzo.171124.jpg",
+      "continent": "Europa",
+      "country": "Italia",
+      "categoryCode": "7496aab6",
+      "category": "Sport",
+      "type": "Ramino Modiano",
       "usState": "",
       "trivia": null
     },
