@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T04:20:53.518Z",
+  "generatedAt": "2026-08-19T03:47:42.713Z",
   "count": 1256,
   "categories": {
     "az3": "Pubblicità e Aziende",
@@ -563,7 +563,16 @@
       "category": "Sport",
       "type": "Ramino",
       "usState": "",
-      "trivia": null
+      "trivia": {
+        "deckName": "Carte da Gioco Alfa Romeo \"Campione del Mondo Sport\"",
+        "producer": "Modiano",
+        "year": "1975",
+        "notes": [
+          "Queste carte commemorano la vittoria di Alfa Romeo nel Campionato Mondiale Marche (World Championship for Makes) del 1975, dove la scuderia dominò con la sua Alfa Romeo 33 TT 12, conquistando il titolo con sette vittorie su otto gare.",
+          "Il produttore, Modiano di Trieste, è uno dei più antichi e stimati produttori di carte da gioco in Italia, noto per la qualità e per la produzione di mazzi promozionali e da collezione per importanti marchi.",
+          "Il design del dorso presenta il celebre logo Alfa Romeo e una bandiera a scacchi, simboli inequivocabili del successo nelle competizioni automobilistiche, affiancati dal \"Quadrifoglio\" portafortuna, icona storica delle vetture sportive Alfa Romeo."
+        ]
+      }
     },
     {
       "id": "4c91142b",
@@ -5550,7 +5559,14 @@
       "category": "Sport",
       "type": "RAMINO MODIANO",
       "usState": "",
-      "trivia": null
+      "trivia": {
+        "deckName": "Carte da Gioco Ferrari",
+        "producer": "Dal Negro (o altro produttore europeo di alta qualità su licenza Ferrari)",
+        "year": "1990-2000",
+        "notes": [
+          "L"
+        ]
+      }
     },
     {
       "id": "d906cb3e",
