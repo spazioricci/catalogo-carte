@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T03:47:42.713Z",
+  "generatedAt": "2026-09-05T07:28:44.935Z",
   "count": 1256,
   "categories": {
     "az3": "Pubblicità e Aziende",
@@ -3235,7 +3235,12 @@
       "category": "Arte e Cultura",
       "type": "POKER",
       "usState": "",
-      "trivia": null
+      "trivia": {
+        "deckName": "Celtic Series (Serpenti Intrecciati)",
+        "producer": "Waddingtons (o produttore generico dell'epoca)",
+        "year": "1985-1995",
+        "notes": []
+      }
     },
     {
       "id": "aa3be7a1",
@@ -7567,7 +7572,16 @@
       "category": "Arte e Cultura",
       "type": "RAMINO",
       "usState": "",
-      "trivia": null
+      "trivia": {
+        "deckName": "Universal Genetic Code / The Life Code Discovery",
+        "producer": "Piatnik (Ferd. Piatnik & Söhne)",
+        "year": "1973",
+        "notes": [
+          "Il design del dorso delle carte e della scatola presenta una dettagliata mappa circolare del codice genetico, illustrando le triplette di basi nucleotidiche (codoni) e gli aminoacidi corrispondenti, rendendolo un mazzo di carte sia ludico che educativo.",
+          "Questo mazzo è stato creato per celebrare la scoperta e la comprensione del codice genetico, un'importante pietra miliare nella biologia molecolare, e funge da rappresentazione visiva di questo complesso sistema biologico.",
+          "Prodotto dal rinomato produttore austriaco Piatnik, questo mazzo è un pezzo da collezione apprezzato dagli appassionati di carte da gioco a tema scientifico e da coloro che collezionano mazzi Piatnik vintage."
+        ]
+      }
     },
     {
       "id": "4c8fd345",
@@ -8064,7 +8078,16 @@
       "category": "Arte e Cultura",
       "type": "POKER GRIMAUD",
       "usState": "",
-      "trivia": null
+      "trivia": {
+        "deckName": "Jeu Numismatique",
+        "producer": "Grimaud",
+        "year": "1971",
+        "notes": [
+          "Il mazzo è interamente dedicato alla numismatica, l'arte e la scienza della raccolta e dello studio di monete e medaglie. Ogni carta presenta l'immagine dettagliata di una moneta storica, spesso accompagnata da brevi descrizioni o informazioni sul suo periodo e origine.",
+          "Grimaud è uno dei più antichi e prestigiosi produttori di carte da gioco in Francia, con una storia che risale al 1750. È rinomato per la qualità delle sue carte e per la produzione di numerosi mazzi tematici e da collezione, come questo.",
+          "L'immagine sulla scatola raffigura una moneta d'oro medievale francese, che potrebbe essere un \"Franc à cheval\" o una moneta simile, emessa in Francia durante il XIV o XV secolo. Questo design è immediatamente evocativo del tema storico e collezionistico del mazzo."
+        ]
+      }
     },
     {
       "id": "a854325e",
@@ -12620,7 +12643,16 @@
       "category": "Arte e Cultura",
       "type": "POKER",
       "usState": "",
-      "trivia": null
+      "trivia": {
+        "deckName": "Optical Illusions Playing Cards",
+        "producer": "United States Playing Card Company (USPCC)",
+        "year": "Fine anni '70 - Inizio anni '80 (circa 1979-1980)",
+        "notes": [
+          "Il design del mazzo è un classico esempio di Op Art (arte ottica), utilizzando cerchi concentrici verdi e blu su sfondo nero per creare un'illusione di movimento o profondità quando si osserva il dorso delle carte o la scatola.",
+          "Questo mazzo è stato prodotto in un periodo in cui le illusioni ottiche e i design psichedelici erano molto di moda, rendendolo un pezzo rappresentativo della cultura visiva di fine anni '70 e inizio anni '80.",
+          "Nonostante non sia un mazzo \"custom\" moderno, il suo aspetto distintivo lo ha reso un oggetto di interesse sia per i collezionisti di carte da gioco che per gli appassionati di design, ed è stato talvolta utilizzato anche da prestigiatori per il suo effetto visivo unico."
+        ]
+      }
     },
     {
       "id": "7dfff66f",
@@ -15914,7 +15946,16 @@
       "category": "Arte e Cultura",
       "type": "POKER",
       "usState": "",
-      "trivia": null
+      "trivia": {
+        "deckName": "TERRA CARTA USA",
+        "producer": "Pomegranate Communications",
+        "year": "1999 approssimativo",
+        "notes": [
+          "Questo mazzo fa parte della serie \"TERRACARTA\", nota per il suo approccio educativo, dove ogni carta presenta uno stato diverso degli Stati Uniti, completo di mappa, capitale, uccello e fiore di stato, e fatti interessanti.",
+          "Il produttore, Pomegranate Communications, è specializzato in prodotti di alta qualità con temi artistici ed educativi, come calendari, puzzle e, appunto, carte da gioco, spesso collaborando con musei e gallerie.",
+          "La dicitura \"Museum quality playing cards\" sulla scatola sottolinea l'attenzione del produttore per il design, la qualità dei materiali e il valore informativo del mazzo, posizionandolo al di là di un semplice gioco."
+        ]
+      }
     },
     {
       "id": "646a0398",
@@ -16329,7 +16370,16 @@
       "category": "Arte e Cultura",
       "type": "POKER",
       "usState": "",
-      "trivia": null
+      "trivia": {
+        "deckName": "Torino.Italia 150",
+        "producer": "Modiano",
+        "year": "2011",
+        "notes": [
+          "Questo mazzo è stato creato per celebrare il 150° anniversario dell'Unità d'Italia (1861-2011). Il nome \"Torino.Italia\" sottolinea il ruolo storico di Torino come prima capitale del Regno d'Italia.",
+          "Il design delle carte è notevolmente moderno e astratto, distaccandosi dalle tradizionali figure e semi dei mazzi regionali italiani. Utilizza elementi geometrici (stelle, cerchi e quarti di cerchio) nei colori della bandiera italiana (verde, bianco e rosso) per simboleggiare l'identità nazionale.",
+          "Modiano, uno dei più antichi e rinomati produttori di carte da gioco italiani, ha realizzato questo mazzo come parte di una serie più ampia di prodotti commemorativi per le celebrazioni di \"Italia 150\", dimostrando la sua capacità di innovare pur mantenendo un legame con la storia e la cultura italiana."
+        ]
+      }
     },
     {
       "id": "08b22034",
