@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-05T07:28:44.935Z",
-  "count": 1256,
+  "generatedAt": "2026-09-24T08:13:20.041Z",
+  "count": 1255,
   "categories": {
     "az3": "Pubblicità e Aziende",
     "994a3300": "Turismo e Paesaggi",
@@ -5808,20 +5808,6 @@
       "categoryCode": "b6152b31",
       "category": "Arte e Cultura",
       "type": "Poker",
-      "usState": "",
-      "trivia": null
-    },
-    {
-      "id": "7a134461",
-      "num": 151,
-      "title": "FLORENCE",
-      "cover": "7a134461.Immagine.172846.jpg",
-      "deck": "7a134461.Mazzo.185423.jpg",
-      "continent": "Europa",
-      "country": "Italia",
-      "categoryCode": "b6152b31",
-      "category": "Arte e Cultura",
-      "type": "POKER DAL NEGRO",
       "usState": "",
       "trivia": null
     },
