@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-24T08:13:20.041Z",
-  "count": 1255,
+  "generatedAt": "2026-09-27T09:00:43.908Z",
+  "count": 1259,
   "categories": {
     "az3": "Pubblicità e Aziende",
     "994a3300": "Turismo e Paesaggi",
@@ -5812,6 +5812,20 @@
       "trivia": null
     },
     {
+      "id": "a56b5522",
+      "num": 151,
+      "title": "FLORENCE",
+      "cover": "a56b5522.Copertina.155036.jpg",
+      "deck": null,
+      "continent": "Europa",
+      "country": "Italia",
+      "categoryCode": "b6152b31",
+      "category": "Arte e Cultura",
+      "type": "Poker Dal Negro",
+      "usState": "",
+      "trivia": null
+    },
+    {
       "id": "c188273d",
       "num": 120,
       "title": "FLORIDA",
@@ -8953,6 +8967,20 @@
       "trivia": null
     },
     {
+      "id": "d5fe91ef",
+      "num": 504,
+      "title": "LE CARTE DA GIOCO D'AUTORE",
+      "cover": "d5fe91ef.Copertina.140121.jpg",
+      "deck": "d5fe91ef.Mazzo.140121.jpg",
+      "continent": "Europa",
+      "country": "Italia",
+      "categoryCode": "1227f527",
+      "category": "Fumetti e Cartoon",
+      "type": "Carte disegnate da Paolo Mottura",
+      "usState": "",
+      "trivia": null
+    },
+    {
       "id": "cc001a2f",
       "num": 1421,
       "title": "LE CARTE DA GIOCO D'AUTORE DI TOPOLINO",
@@ -10450,6 +10478,20 @@
       "categoryCode": "994a3300",
       "category": "Turismo e Paesaggi",
       "type": "POKER",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "cb981363",
+      "num": 1227,
+      "title": "MEGA 5",
+      "cover": "cb981363.Copertina.155242.jpg",
+      "deck": null,
+      "continent": "Europa",
+      "country": "Italia",
+      "categoryCode": "b6152b31",
+      "category": "Arte e Cultura",
+      "type": "Poker Dal Negro",
       "usState": "",
       "trivia": null
     },
@@ -12404,6 +12446,20 @@
       "categoryCode": "7496aab6",
       "category": "Sport",
       "type": "RAMINO MODIANO",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "0d68c3fc",
+      "num": 505,
+      "title": "OLIMPIADI INVERNALI SALT LAKE 2002",
+      "cover": "0d68c3fc.Copertina.140847.jpg",
+      "deck": "0d68c3fc.Mazzo.140847.jpg",
+      "continent": "Americhe",
+      "country": "Stati Uniti d'America",
+      "categoryCode": "7496aab6",
+      "category": "Sport",
+      "type": "Poker",
       "usState": "",
       "trivia": null
     },
