@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-05T10:06:37.269Z",
-  "count": 1259,
+  "generatedAt": "2026-10-11T09:45:15.176Z",
+  "count": 1250,
   "categories": {
     "az3": "Pubblicità e Aziende",
     "994a3300": "Turismo e Paesaggi",
@@ -4809,20 +4809,6 @@
       }
     },
     {
-      "id": "5b2d7038",
-      "num": 305,
-      "title": "DRAGONI",
-      "cover": "5b2d7038.Immagine.174909.jpg",
-      "deck": "5b2d7038.Mazzo.215732.jpg",
-      "continent": "Europa",
-      "country": "Russia",
-      "categoryCode": "b6152b31",
-      "category": "Arte e Cultura",
-      "type": "BELOTE",
-      "usState": "",
-      "trivia": null
-    },
-    {
       "id": "06c090a4",
       "num": 847,
       "title": "DUBAI",
@@ -7001,20 +6987,6 @@
       "trivia": null
     },
     {
-      "id": "362a6be1",
-      "num": 834,
-      "title": "HACHAZO",
-      "cover": "362a6be1.Immagine.181807.jpg",
-      "deck": "362a6be1.Mazzo.212133.jpg",
-      "continent": "Americhe",
-      "country": "Argentina",
-      "categoryCode": "4ef8cdb4",
-      "category": "Carte Tradizionali (Naipes)",
-      "type": "BARAJA",
-      "usState": "",
-      "trivia": null
-    },
-    {
       "id": "f5dccb92",
       "num": 835,
       "title": "HACHAZO",
@@ -8213,20 +8185,6 @@
       "category": "Stati USA",
       "type": "POKER",
       "usState": "Kansas",
-      "trivia": null
-    },
-    {
-      "id": "d36387e9",
-      "num": 733,
-      "title": "KAPBY",
-      "cover": "d36387e9.Immagine.175613.jpg",
-      "deck": "d36387e9.Mazzo.115415.jpg",
-      "continent": "Europa",
-      "country": "Russia",
-      "categoryCode": "b6152b31",
-      "category": "Arte e Cultura",
-      "type": "BELOTE",
-      "usState": "",
       "trivia": null
     },
     {
@@ -13434,48 +13392,6 @@
       "trivia": null
     },
     {
-      "id": "77fda0a5",
-      "num": 303,
-      "title": "POKER",
-      "cover": "77fda0a5.Immagine.174849.jpg",
-      "deck": "77fda0a5.Mazzo.215448.jpg",
-      "continent": "Europa",
-      "country": "Russia",
-      "categoryCode": "b6152b31",
-      "category": "Arte e Cultura",
-      "type": "BELOTE",
-      "usState": "",
-      "trivia": null
-    },
-    {
-      "id": "d69a1c55",
-      "num": 304,
-      "title": "POKER",
-      "cover": "d69a1c55.Immagine.174856.jpg",
-      "deck": "d69a1c55.Mazzo.215239.jpg",
-      "continent": "Europa",
-      "country": "Russia",
-      "categoryCode": "b6152b31",
-      "category": "Arte e Cultura",
-      "type": "POKER 1993",
-      "usState": "",
-      "trivia": null
-    },
-    {
-      "id": "97c83226",
-      "num": 310,
-      "title": "POKER",
-      "cover": "97c83226.Immagine.175059.jpg",
-      "deck": "97c83226.Mazzo.175201.jpg",
-      "continent": "Europa",
-      "country": "Russia",
-      "categoryCode": "b6152b31",
-      "category": "Arte e Cultura",
-      "type": "POKER 1994",
-      "usState": "",
-      "trivia": null
-    },
-    {
       "id": "333e3a8b",
       "num": 1226,
       "title": "POKER  95° ANNIVERSARIO",
@@ -14834,20 +14750,6 @@
       "trivia": null
     },
     {
-      "id": "3acf3b3b",
-      "num": 306,
-      "title": "SEMI",
-      "cover": "3acf3b3b.Immagine.174917.jpg",
-      "deck": "3acf3b3b.Mazzo.174535.jpg",
-      "continent": "Europa",
-      "country": "Russia",
-      "categoryCode": "b6152b31",
-      "category": "Arte e Cultura",
-      "type": "BELOTE 1993",
-      "usState": "",
-      "trivia": null
-    },
-    {
       "id": "c0ed5420",
       "num": 910,
       "title": "SENATO CANADESE",
@@ -15142,20 +15044,6 @@
       "trivia": null
     },
     {
-      "id": "3bb4a56e",
-      "num": 561,
-      "title": "SOLITARIO",
-      "cover": "3bb4a56e.Immagine.175446.jpg",
-      "deck": "3bb4a56e.Mazzo.173506.jpg",
-      "continent": "Europa",
-      "country": "Russia",
-      "categoryCode": "b6152b31",
-      "category": "Arte e Cultura",
-      "type": "RAMINO MINI",
-      "usState": "",
-      "trivia": null
-    },
-    {
       "id": "e1ec9529",
       "num": 295,
       "title": "SOSSUSVLEI",
@@ -15441,20 +15329,6 @@
       "categoryCode": "7496aab6",
       "category": "Sport",
       "type": "POKER",
-      "usState": "",
-      "trivia": null
-    },
-    {
-      "id": "bfbf95ef",
-      "num": 309,
-      "title": "STAMPE ANTICHE",
-      "cover": "bfbf95ef.Immagine.175047.jpg",
-      "deck": "bfbf95ef.Mazzo.174227.jpg",
-      "continent": "Europa",
-      "country": "Russia",
-      "categoryCode": "b6152b31",
-      "category": "Arte e Cultura",
-      "type": "CARTE DA GIOCO RAPPRESENTAZIONI DI STAMPE ANTICHE",
       "usState": "",
       "trivia": null
     },
