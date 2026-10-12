@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-11T09:45:15.176Z",
-  "count": 1250,
+  "generatedAt": "2026-10-12T10:23:31.667Z",
+  "count": 1259,
   "categories": {
     "az3": "Pubblicità e Aziende",
     "994a3300": "Turismo e Paesaggi",
@@ -100,6 +100,20 @@
       "categoryCode": "b6152b31",
       "category": "Arte e Cultura",
       "type": "POKER MODIANO",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "2cebf1a2",
+      "num": 366,
+      "title": "150 ANNI UNITA' D'ITALIA",
+      "cover": "2cebf1a2.Copertina.143922.jpg",
+      "deck": "2cebf1a2.Mazzo.143922.jpg",
+      "continent": "Europa",
+      "country": "Italia",
+      "categoryCode": "38dbcf94",
+      "category": "Storia e Personaggi",
+      "type": "POKER MODIANO ROSSE E BLU",
       "usState": "",
       "trivia": null
     },
@@ -6456,6 +6470,20 @@
       "trivia": null
     },
     {
+      "id": "7c0bde6f",
+      "num": 306,
+      "title": "GLUCKSSPIELER",
+      "cover": "7c0bde6f.Copertina.142857.jpg",
+      "deck": "7c0bde6f.Mazzo.142857.jpg",
+      "continent": "Europa",
+      "country": "Germania",
+      "categoryCode": "b6152b31",
+      "category": "Arte e Cultura",
+      "type": "POKER",
+      "usState": "",
+      "trivia": null
+    },
+    {
       "id": "de8afef1",
       "num": 612,
       "title": "GOCCIA PROFUMERIE",
@@ -7039,6 +7067,20 @@
       "categoryCode": "az3",
       "category": "Pubblicità e Aziende",
       "type": "POKER",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "a4b2ecc3",
+      "num": 359,
+      "title": "HARRODS",
+      "cover": "a4b2ecc3.Copertina.143645.jpg",
+      "deck": "a4b2ecc3.Mazzo.143645.jpg",
+      "continent": "Europa",
+      "country": "Regno Unito",
+      "categoryCode": "az3",
+      "category": "Pubblicità e Aziende",
+      "type": "RAMINO",
       "usState": "",
       "trivia": null
     },
@@ -8776,6 +8818,20 @@
       "trivia": null
     },
     {
+      "id": "fed7702c",
+      "num": 310,
+      "title": "LAUDA AIR",
+      "cover": "fed7702c.Copertina.143205.jpg",
+      "deck": "fed7702c.Mazzo.143205.jpg",
+      "continent": "Europa",
+      "country": "Austria",
+      "categoryCode": "7fd4fd31",
+      "category": "Aviazione e Trasporti",
+      "type": "POKER 32",
+      "usState": "",
+      "trivia": null
+    },
+    {
       "id": "b68b5e0b",
       "num": 186,
       "title": "LE CARTE AZZURRE DI CALCIO 2000",
@@ -8991,6 +9047,20 @@
       "categoryCode": "1227f527",
       "category": "Fumetti e Cartoon",
       "type": "POKER",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "414f20bd",
+      "num": 316,
+      "title": "LE CARTE DI JACOVITTI",
+      "cover": "414f20bd.Copertina.143347.jpg",
+      "deck": "414f20bd.Mazzo.143347.jpg",
+      "continent": "Europa",
+      "country": "Italia",
+      "categoryCode": "1227f527",
+      "category": "Fumetti e Cartoon",
+      "type": "POKER DAL NEGRO",
       "usState": "",
       "trivia": null
     },
@@ -11438,6 +11508,20 @@
       "trivia": null
     },
     {
+      "id": "2b325b1f",
+      "num": 305,
+      "title": "MUNDIAL 82",
+      "cover": "2b325b1f.Copertina.142738.jpg",
+      "deck": "2b325b1f.Mazzo.142738.jpg",
+      "continent": "Europa",
+      "country": "Italia",
+      "categoryCode": "7496aab6",
+      "category": "Sport",
+      "type": "POKER",
+      "usState": "",
+      "trivia": null
+    },
+    {
       "id": "4b8abb0c",
       "num": 777,
       "title": "MUSEE D'ORSAY MONET",
@@ -12142,6 +12226,20 @@
       "trivia": null
     },
     {
+      "id": "a72642be",
+      "num": 309,
+      "title": "NORIMBERG",
+      "cover": "a72642be.Copertina.143029.jpg",
+      "deck": "a72642be.Mazzo.143029.jpg",
+      "continent": "Europa",
+      "country": "Germania",
+      "categoryCode": "b6152b31",
+      "category": "Arte e Cultura",
+      "type": "POKER",
+      "usState": "",
+      "trivia": null
+    },
+    {
       "id": "c6bee077",
       "num": 1012,
       "title": "NORTH DAKOTA",
@@ -12387,6 +12485,20 @@
       "deck": "db3abd2f.Mazzo.185716.jpg",
       "continent": "Americhe",
       "country": "Stati Uniti d'America",
+      "categoryCode": "7496aab6",
+      "category": "Sport",
+      "type": "POKER",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "d9318341",
+      "num": 304,
+      "title": "OLIMPIADI INVERNALI  SARAJEVO 1984",
+      "cover": "d9318341.Copertina.142558.jpg",
+      "deck": "d9318341.Mazzo.142558.jpg",
+      "continent": "Europa",
+      "country": "Bosnia ed Erzegovina",
       "categoryCode": "7496aab6",
       "category": "Sport",
       "type": "POKER",
@@ -16271,6 +16383,20 @@
       "categoryCode": "7496aab6",
       "category": "Sport",
       "type": "POKER DAL NEGRO",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "066a75a7",
+      "num": 303,
+      "title": "TORINO CALCIO 1985/86",
+      "cover": "066a75a7.Copertina.142338.jpg",
+      "deck": "066a75a7.Mazzo.142338.jpg",
+      "continent": "Europa",
+      "country": "Italia",
+      "categoryCode": "7496aab6",
+      "category": "Sport",
+      "type": "POKER",
       "usState": "",
       "trivia": null
     },
