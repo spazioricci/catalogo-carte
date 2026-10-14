@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-12T10:23:31.667Z",
-  "count": 1259,
+  "generatedAt": "2026-10-14T08:28:28.064Z",
+  "count": 1266,
   "categories": {
     "az3": "Pubblicità e Aziende",
     "994a3300": "Turismo e Paesaggi",
@@ -655,6 +655,20 @@
       "categoryCode": "7fd4fd31",
       "category": "Aviazione e Trasporti",
       "type": "POKER DAL NEGRO",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "b7c840ea",
+      "num": 407,
+      "title": "ALPINE FLOWERS",
+      "cover": "b7c840ea.Copertina.213145.jpg",
+      "deck": "b7c840ea.Mazzo.213145.jpg",
+      "continent": "Europa",
+      "country": "Austria",
+      "categoryCode": "b6152b31",
+      "category": "Arte e Cultura",
+      "type": "RAMINO PIATNIK",
       "usState": "",
       "trivia": null
     },
@@ -7745,6 +7759,20 @@
       "trivia": null
     },
     {
+      "id": "677000a4",
+      "num": 506,
+      "title": "INVISIBLE CARDS",
+      "cover": "677000a4.Copertina.214058.jpg",
+      "deck": "677000a4.Mazzo.214058.jpg",
+      "continent": "Europa",
+      "country": "Irlanda",
+      "categoryCode": "b6152b31",
+      "category": "Arte e Cultura",
+      "type": "POKER",
+      "usState": "",
+      "trivia": null
+    },
+    {
       "id": "0b1b4764",
       "num": 1005,
       "title": "IOS",
@@ -8240,6 +8268,20 @@
       "categoryCode": "a9b11345",
       "category": "Bevande e Alcolici",
       "type": "SKAT",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "612cc434",
+      "num": 508,
+      "title": "KEEP CALM",
+      "cover": "612cc434.Copertina.214753.jpg",
+      "deck": "612cc434.Mazzo.214753.jpg",
+      "continent": "Europa",
+      "country": "Regno Unito",
+      "categoryCode": "b6152b31",
+      "category": "Arte e Cultura",
+      "type": "POKER IN LATTA",
       "usState": "",
       "trivia": null
     },
@@ -9769,6 +9811,20 @@
       "trivia": null
     },
     {
+      "id": "ab6c223f",
+      "num": 371,
+      "title": "LUKY DAY",
+      "cover": "ab6c223f.Copertina.213544.jpg",
+      "deck": "ab6c223f.Mazzo.213544.jpg",
+      "continent": "Europa",
+      "country": "Paesi Bassi",
+      "categoryCode": "b6152b31",
+      "category": "Arte e Cultura",
+      "type": "POKER",
+      "usState": "",
+      "trivia": null
+    },
+    {
       "id": "1391f493",
       "num": 1456,
       "title": "LUKY LUKE",
@@ -10496,6 +10552,20 @@
       "trivia": null
     },
     {
+      "id": "a5a1206d",
+      "num": 405,
+      "title": "MEDAILLON",
+      "cover": "a5a1206d.Copertina.213016.jpg",
+      "deck": "a5a1206d.Mazzo.213016.jpg",
+      "continent": "Europa",
+      "country": "Austria",
+      "categoryCode": "b6152b31",
+      "category": "Arte e Cultura",
+      "type": "RAMINO PIATNIK",
+      "usState": "",
+      "trivia": null
+    },
+    {
       "id": "69f0a7f8",
       "num": 954,
       "title": "MEDITERRANEE",
@@ -10801,6 +10871,20 @@
       "category": "Stati USA",
       "type": "POKER",
       "usState": "Mississippi",
+      "trivia": null
+    },
+    {
+      "id": "f3912b30",
+      "num": 509,
+      "title": "MISSISSIPPI GAMBLER",
+      "cover": "f3912b30.Copertina.215124.jpg",
+      "deck": "f3912b30.Mazzo.215124.jpg",
+      "continent": "Europa",
+      "country": "Germania",
+      "categoryCode": "b6152b31",
+      "category": "Arte e Cultura",
+      "type": "POKER",
+      "usState": "",
       "trivia": null
     },
     {
@@ -15208,6 +15292,20 @@
       "categoryCode": "7496aab6",
       "category": "Sport",
       "type": "POKER",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "4530c8d2",
+      "num": 507,
+      "title": "SPACE CARDS",
+      "cover": "4530c8d2.Copertina.214456.jpg",
+      "deck": "4530c8d2.Mazzo.214456.jpg",
+      "continent": "Americhe",
+      "country": "Stati Uniti d'America",
+      "categoryCode": "b6152b31",
+      "category": "Arte e Cultura",
+      "type": "POKER TONDE",
       "usState": "",
       "trivia": null
     },
