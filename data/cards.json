@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-14T08:28:28.064Z",
-  "count": 1266,
+  "generatedAt": "2026-10-20T08:15:57.716Z",
+  "count": 1264,
   "categories": {
     "az3": "Pubblicità e Aziende",
     "994a3300": "Turismo e Paesaggi",
@@ -531,8 +531,8 @@
       "deck": "6a05f718.Mazzo.212012.jpg",
       "continent": "Americhe",
       "country": "Stati Uniti d'America",
-      "categoryCode": "994a3300",
-      "category": "Turismo e Paesaggi",
+      "categoryCode": "az7",
+      "category": "Monumenti e Architettura",
       "type": "POKER",
       "usState": "California",
       "trivia": null
@@ -3024,20 +3024,6 @@
       "categoryCode": "az3",
       "category": "Pubblicità e Aziende",
       "type": "BELOTE",
-      "usState": "",
-      "trivia": null
-    },
-    {
-      "id": "e794f090",
-      "num": 398,
-      "title": "CASABLANCA",
-      "cover": "e794f090.Immagine.165145.jpg",
-      "deck": null,
-      "continent": "Africa",
-      "country": "Marocco",
-      "categoryCode": "az1",
-      "category": "Città",
-      "type": "POKER",
       "usState": "",
       "trivia": null
     },
@@ -5780,20 +5766,6 @@
       "categoryCode": "az3",
       "category": "Pubblicità e Aziende",
       "type": "POKER",
-      "usState": "",
-      "trivia": null
-    },
-    {
-      "id": "9fe7853d",
-      "num": 157,
-      "title": "FIRENZE",
-      "cover": "9fe7853d.Immagine.172717.jpg",
-      "deck": "9fe7853d.Mazzo.204939.jpg",
-      "continent": "Europa",
-      "country": "Italia",
-      "categoryCode": "az1",
-      "category": "Città",
-      "type": "RAMINO DAL NEGRO",
       "usState": "",
       "trivia": null
     },
@@ -9088,7 +9060,7 @@
       "country": "Italia",
       "categoryCode": "1227f527",
       "category": "Fumetti e Cartoon",
-      "type": "POKER",
+      "type": "POKER ROSSE E BLU",
       "usState": "",
       "trivia": null
     },
@@ -16217,8 +16189,8 @@
       "deck": "089b2f34.Mazzo.211218.jpg",
       "continent": "Americhe",
       "country": "Stati Uniti d'America",
-      "categoryCode": "994a3300",
-      "category": "Turismo e Paesaggi",
+      "categoryCode": "az7",
+      "category": "Monumenti e Architettura",
       "type": "POKER",
       "usState": "California",
       "trivia": null
