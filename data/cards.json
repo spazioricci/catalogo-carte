@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-20T08:15:57.716Z",
-  "count": 1264,
+  "generatedAt": "2026-10-22T08:22:38.738Z",
+  "count": 1263,
   "categories": {
     "az3": "Pubblicità e Aziende",
     "994a3300": "Turismo e Paesaggi",
@@ -147,7 +147,7 @@
     },
     {
       "id": "ab4690c4",
-      "num": 1240,
+      "num": 537,
       "title": "2000",
       "cover": "ab4690c4.Copertina.172339.jpg",
       "deck": "ab4690c4.Mazzo.172339.jpg",
@@ -156,20 +156,6 @@
       "categoryCode": "b6152b31",
       "category": "Arte e Cultura",
       "type": "POKER",
-      "usState": "",
-      "trivia": null
-    },
-    {
-      "id": "b3e5f659",
-      "num": 1451,
-      "title": "30°ANNIVERSARIO VOLOELICA",
-      "cover": "b3e5f659.Immagine.182525.jpg",
-      "deck": "b3e5f659.Mazzo.114206.jpg",
-      "continent": "Europa",
-      "country": "Italia",
-      "categoryCode": "b6152b31",
-      "category": "Arte e Cultura",
-      "type": "POKER AZZURRE E BLU DAL NEGRO",
       "usState": "",
       "trivia": null
     },
@@ -553,7 +539,7 @@
     },
     {
       "id": "6b736967",
-      "num": 1210,
+      "num": 636,
       "title": "ALDEN DOW",
       "cover": "6b736967.Immagine.171749.jpg",
       "deck": null,
@@ -898,7 +884,7 @@
     },
     {
       "id": "101af002",
-      "num": 1344,
+      "num": 570,
       "title": "ANDORRA",
       "cover": "101af002.Immagine.104245.jpg",
       "deck": null,
@@ -1066,7 +1052,7 @@
     },
     {
       "id": "c2d25012",
-      "num": 1261,
+      "num": 535,
       "title": "ARTE FOLK POLACCA",
       "cover": "c2d25012.Immagine.210125.jpg",
       "deck": "c2d25012.Mazzo.215002.jpg",
@@ -1164,7 +1150,7 @@
     },
     {
       "id": "7e57d8be",
-      "num": 1244,
+      "num": 678,
       "title": "ASSOCIAZIONE DEL PAESAGGIO RENANIA",
       "cover": "7e57d8be.Immagine.164527.jpg",
       "deck": "7e57d8be.Mazzo.201318.jpg",
@@ -1206,7 +1192,7 @@
     },
     {
       "id": "9a0c213e",
-      "num": 1359,
+      "num": 660,
       "title": "ASTERIX",
       "cover": "9a0c213e.Immagine.102712.jpg",
       "deck": "9a0c213e.Mazzo.225809.jpg",
@@ -1570,7 +1556,7 @@
     },
     {
       "id": "872fe9d3",
-      "num": 1337,
+      "num": 629,
       "title": "BANSKY",
       "cover": "872fe9d3.Immagine.101345.jpg",
       "deck": "872fe9d3.Mazzo.172019.jpg",
@@ -1626,7 +1612,7 @@
     },
     {
       "id": "8d32710b",
-      "num": 1259,
+      "num": 633,
       "title": "BARAJA PINTADA",
       "cover": "8d32710b.Immagine.152454.jpg",
       "deck": null,
@@ -1794,7 +1780,7 @@
     },
     {
       "id": "407ff31a",
-      "num": 1357,
+      "num": 656,
       "title": "BATMAN",
       "cover": "407ff31a.Immagine.102507.jpg",
       "deck": "407ff31a.Mazzo.223335.jpg",
@@ -2148,7 +2134,7 @@
     },
     {
       "id": "bc1ac407",
-      "num": 1434,
+      "num": 650,
       "title": "BOB ET BOBETTE",
       "cover": "bc1ac407.Immagine.133745.jpg",
       "deck": "bc1ac407.Mazzo.225607.jpg",
@@ -2176,7 +2162,7 @@
     },
     {
       "id": "3aae4416",
-      "num": 1429,
+      "num": 568,
       "title": "BODRUM",
       "cover": "3aae4416.Immagine.165310.jpg",
       "deck": "3aae4416.Mazzo.203314.jpg",
@@ -2232,7 +2218,7 @@
     },
     {
       "id": "15a33086",
-      "num": 1276,
+      "num": 587,
       "title": "BOLOGNA CALCIO",
       "cover": "15a33086.Immagine.170308.jpg",
       "deck": "15a33086.Mazzo.211234.jpg",
@@ -2442,7 +2428,7 @@
     },
     {
       "id": "a43460f4",
-      "num": 1246,
+      "num": 534,
       "title": "BROT IST DAS AS",
       "cover": "a43460f4.Immagine.165357.jpg",
       "deck": "a43460f4.Mazzo.212841.jpg",
@@ -2964,7 +2950,7 @@
     },
     {
       "id": "e48bd1fd",
-      "num": 1237,
+      "num": 541,
       "title": "CARICATURE POLITICI TEDESCHI",
       "cover": "e48bd1fd.Immagine.162533.jpg",
       "deck": "e48bd1fd.Mazzo.202851.jpg",
@@ -3300,7 +3286,7 @@
     },
     {
       "id": "b52f9be1",
-      "num": 1336,
+      "num": 548,
       "title": "CERULISINA FAST",
       "cover": "b52f9be1.Immagine.100852.jpg",
       "deck": "b52f9be1.Mazzo.221020.jpg",
@@ -3328,7 +3314,7 @@
     },
     {
       "id": "d2630a93",
-      "num": 1450,
+      "num": 516,
       "title": "CHANDRAS",
       "cover": "d2630a93.Immagine.182054.jpg",
       "deck": "d2630a93.Mazzo.104451.jpg",
@@ -3650,7 +3636,7 @@
     },
     {
       "id": "62f92608",
-      "num": 1431,
+      "num": 538,
       "title": "CIRULLA",
       "cover": "62f92608.Immagine.130656.jpg",
       "deck": "62f92608.Mazzo.213147.jpg",
@@ -3897,7 +3883,7 @@
     },
     {
       "id": "aa5a94d3",
-      "num": 1445,
+      "num": 542,
       "title": "COM CARDS",
       "cover": "aa5a94d3.Immagine.093916.jpg",
       "deck": "aa5a94d3.Mazzo.210129.jpg",
@@ -4125,7 +4111,7 @@
     },
     {
       "id": "793bc769",
-      "num": 1457,
+      "num": 515,
       "title": "CORSICA SARDINIA FERRIES",
       "cover": "793bc769.Immagine.201612.jpg",
       "deck": "793bc769.Mazzo.164356.jpg",
@@ -4764,7 +4750,7 @@
     },
     {
       "id": "5be5e61f",
-      "num": 1439,
+      "num": 621,
       "title": "DONALD TRUMP",
       "cover": "5be5e61f.Immagine.143154.jpg",
       "deck": "5be5e61f.Mazzo.180754.jpg",
@@ -4950,7 +4936,7 @@
     },
     {
       "id": "03df67d9",
-      "num": 1397,
+      "num": 549,
       "title": "EATALY",
       "cover": "03df67d9.Immagine.172935.jpg",
       "deck": "03df67d9.Mazzo.215927.jpg",
@@ -5034,7 +5020,7 @@
     },
     {
       "id": "edfdb96d",
-      "num": 1324,
+      "num": 638,
       "title": "EL CIO CAMPEADOR",
       "cover": "edfdb96d.Immagine.205340.jpg",
       "deck": null,
@@ -5279,7 +5265,7 @@
     },
     {
       "id": "d0bb341d",
-      "num": 1378,
+      "num": 617,
       "title": "EURO 2012",
       "cover": "d0bb341d.Immagine.154727.jpg",
       "deck": "d0bb341d.Mazzo.210958.jpg",
@@ -5386,7 +5372,7 @@
     },
     {
       "id": "189e4b66",
-      "num": 1228,
+      "num": 518,
       "title": "F.LLI DE VIVO SUOLIFICIO",
       "cover": "189e4b66.Immagine.172320.jpg",
       "deck": "189e4b66.Mazzo.185403.jpg",
@@ -5456,7 +5442,7 @@
     },
     {
       "id": "28a8fabe",
-      "num": 1268,
+      "num": 533,
       "title": "FAVOLOSA LOMBARDIA",
       "cover": "28a8fabe.Immagine.154521.jpg",
       "deck": "28a8fabe.Mazzo.223209.jpg",
@@ -5673,7 +5659,7 @@
     },
     {
       "id": "f514d417",
-      "num": 1264,
+      "num": 620,
       "title": "FIGC",
       "cover": "f514d417.Immagine.154658.jpg",
       "deck": "f514d417.Mazzo.215659.jpg",
@@ -6107,7 +6093,7 @@
     },
     {
       "id": "cbbee7d4",
-      "num": 1295,
+      "num": 639,
       "title": "GARDALAND",
       "cover": "cbbee7d4.Immagine.205248.jpg",
       "deck": "cbbee7d4.Mazzo.223943.jpg",
@@ -7380,7 +7366,7 @@
     },
     {
       "id": "dc727f63",
-      "num": 1207,
+      "num": 574,
       "title": "HUAHINE",
       "cover": "dc727f63.Immagine.154318.jpg",
       "deck": "dc727f63.Mazzo.212418.jpg",
@@ -7704,7 +7690,7 @@
     },
     {
       "id": "c570974a",
-      "num": 1235,
+      "num": 584,
       "title": "INTER",
       "cover": "c570974a.Immagine.131440.jpg",
       "deck": "c570974a.Mazzo.214912.jpg",
@@ -8026,7 +8012,7 @@
     },
     {
       "id": "2c2406a2",
-      "num": 1362,
+      "num": 532,
       "title": "JEU COQUIN KAMASUTRA",
       "cover": "2c2406a2.Immagine.194027.jpg",
       "deck": "2c2406a2.Mazzo.215206.jpg",
@@ -8315,7 +8301,7 @@
     },
     {
       "id": "ce273c6b",
-      "num": 1212,
+      "num": 558,
       "title": "KINDERDIJK",
       "cover": "ce273c6b.Immagine.094822.jpg",
       "deck": null,
@@ -8525,7 +8511,7 @@
     },
     {
       "id": "850af9d0",
-      "num": 1427,
+      "num": 659,
       "title": "KUIFJE  TENTEN",
       "cover": "850af9d0.Immagine.195422.jpg",
       "deck": "850af9d0.Mazzo.224941.jpg",
@@ -9145,7 +9131,7 @@
     },
     {
       "id": "00a8203f",
-      "num": 1371,
+      "num": 649,
       "title": "LE KARTE DI DIABOLIK",
       "cover": "00a8203f.Immagine.152815.jpg",
       "deck": "00a8203f.Mazzo.223128.jpg",
@@ -9159,7 +9145,7 @@
     },
     {
       "id": "0758eee2",
-      "num": 1234,
+      "num": 657,
       "title": "LE KARTE DI EVA KANT",
       "cover": "0758eee2.Immagine.144919.jpg",
       "deck": "0758eee2.Mazzo.214325.jpg",
@@ -9327,7 +9313,7 @@
     },
     {
       "id": "d57462fe",
-      "num": 1428,
+      "num": 642,
       "title": "LES BEAUX ETES",
       "cover": "d57462fe.Immagine.164747.jpg",
       "deck": "d57462fe.Mazzo.225526.jpg",
@@ -9392,7 +9378,7 @@
     },
     {
       "id": "4eaf2be2",
-      "num": 1326,
+      "num": 652,
       "title": "LES INDISTRUCTIBLES",
       "cover": "4eaf2be2.Immagine.205214.jpg",
       "deck": "4eaf2be2.Mazzo.223400.jpg",
@@ -9686,7 +9672,7 @@
     },
     {
       "id": "ea4a8071",
-      "num": 1325,
+      "num": 658,
       "title": "LOTO",
       "cover": "ea4a8071.Immagine.152937.jpg",
       "deck": "ea4a8071.Mazzo.205904.jpg",
@@ -9798,7 +9784,7 @@
     },
     {
       "id": "1391f493",
-      "num": 1456,
+      "num": 157,
       "title": "LUKY LUKE",
       "cover": "1391f493.Immagine.201332.jpg",
       "deck": "1391f493.Mazzo.222545.jpg",
@@ -10180,7 +10166,7 @@
     },
     {
       "id": "54311dcf",
-      "num": 1412,
+      "num": 645,
       "title": "MANDARINE",
       "cover": "54311dcf.Immagine.192254.jpg",
       "deck": "54311dcf.Mazzo.224036.jpg",
@@ -10292,7 +10278,7 @@
     },
     {
       "id": "df7a9993",
-      "num": 1340,
+      "num": 635,
       "title": "MARILYN",
       "cover": "df7a9993.Immagine.103242.jpg",
       "deck": null,
@@ -10469,7 +10455,7 @@
     },
     {
       "id": "648771c1",
-      "num": 1241,
+      "num": 661,
       "title": "MAUSOLEO  PANORAMA",
       "cover": "648771c1.Immagine.210649.jpg",
       "deck": "648771c1.Mazzo.211535.jpg",
@@ -10553,7 +10539,7 @@
     },
     {
       "id": "cb981363",
-      "num": 1227,
+      "num": 527,
       "title": "MEGA 5",
       "cover": "cb981363.Copertina.155242.jpg",
       "deck": null,
@@ -11234,7 +11220,7 @@
     },
     {
       "id": "1b09957d",
-      "num": 1312,
+      "num": 677,
       "title": "MONET  MUSEO DI TOLEDO",
       "cover": "1b09957d.Immagine.205130.jpg",
       "deck": "1b09957d.Mazzo.221122.jpg",
@@ -11248,7 +11234,7 @@
     },
     {
       "id": "bec18503",
-      "num": 1315,
+      "num": 676,
       "title": "MONET MUSEO DI TOLEDO",
       "cover": "bec18503.Immagine.205004.jpg",
       "deck": "bec18503.Mazzo.212609.jpg",
@@ -11290,7 +11276,7 @@
     },
     {
       "id": "12d108a2",
-      "num": 1205,
+      "num": 559,
       "title": "MOOREA",
       "cover": "12d108a2.Immagine.154657.jpg",
       "deck": "12d108a2.Mazzo.212351.jpg",
@@ -11649,7 +11635,7 @@
     },
     {
       "id": "97384787",
-      "num": 837,
+      "num": 834,
       "title": "MUSEO LEONARDO DA VINCI",
       "cover": "97384787.Immagine.194519.jpg",
       "deck": "97384787.Mazzo.220923.jpg",
@@ -11737,20 +11723,6 @@
       "categoryCode": "994a3300",
       "category": "Turismo e Paesaggi",
       "type": "NAIPES",
-      "usState": "",
-      "trivia": null
-    },
-    {
-      "id": "ebf627ab",
-      "num": 1229,
-      "title": "NAIPES",
-      "cover": "ebf627ab.Immagine.154709.jpg",
-      "deck": null,
-      "continent": "Europa",
-      "country": "Spagna",
-      "categoryCode": "4ef8cdb4",
-      "category": "Carte Tradizionali (Naipes)",
-      "type": "FOURNIER",
       "usState": "",
       "trivia": null
     },
@@ -13510,7 +13482,7 @@
     },
     {
       "id": "95c87f53",
-      "num": 1367,
+      "num": 536,
       "title": "PIXEL CARDS",
       "cover": "95c87f53.Immagine.195532.jpg",
       "deck": "95c87f53.Mazzo.212003.jpg",
@@ -14093,7 +14065,7 @@
     },
     {
       "id": "094b424e",
-      "num": 1355,
+      "num": 530,
       "title": "READ",
       "cover": "094b424e.Immagine.184621.jpg",
       "deck": "094b424e.Mazzo.201855.jpg",
@@ -14415,7 +14387,7 @@
     },
     {
       "id": "8cadf4f2",
-      "num": 1217,
+      "num": 561,
       "title": "ROMANIA",
       "cover": "8cadf4f2.Immagine.220008.jpg",
       "deck": "8cadf4f2.Mazzo.185355.jpg",
@@ -15376,7 +15348,7 @@
     },
     {
       "id": "9a6353d2",
-      "num": 1291,
+      "num": 531,
       "title": "SPOSINI",
       "cover": "9a6353d2.Immagine.204633.jpg",
       "deck": null,
@@ -15572,7 +15544,7 @@
     },
     {
       "id": "efbaa083",
-      "num": 1399,
+      "num": 560,
       "title": "STEMMA PORTOGALLO",
       "cover": "efbaa083.Immagine.173538.jpg",
       "deck": "efbaa083.Mazzo.203519.jpg",
@@ -16141,7 +16113,7 @@
     },
     {
       "id": "f27caaab",
-      "num": 1449,
+      "num": 628,
       "title": "THE AMERICAN BICENTENNIAL",
       "cover": "f27caaab.Immagine.195208.jpg",
       "deck": null,
@@ -16523,7 +16495,7 @@
     },
     {
       "id": "56a06f75",
-      "num": 1316,
+      "num": 543,
       "title": "TOTOCALCIO",
       "cover": "56a06f75.Immagine.151559.jpg",
       "deck": "56a06f75.Mazzo.101609.jpg",
@@ -17843,6 +17815,20 @@
       "categoryCode": "az7",
       "category": "Monumenti e Architettura",
       "type": "RAMINO COSTUMI CINESI",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "2e8481a0",
+      "num": 398,
+      "title": "WORLD BRIDGE CHAMPIONSHIPS",
+      "cover": "2e8481a0.Copertina.161500.jpg",
+      "deck": null,
+      "continent": "Americhe",
+      "country": "Brasile",
+      "categoryCode": "b6152b31",
+      "category": "Arte e Cultura",
+      "type": "POKER MAZZI ROSSO E VERDE",
       "usState": "",
       "trivia": null
     },
