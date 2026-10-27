@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-26T08:36:37.276Z",
-  "count": 1263,
+  "generatedAt": "2026-10-27T08:44:02.037Z",
+  "count": 1261,
   "categories": {
     "az3": "Pubblicità e Aziende",
     "994a3300": "Turismo e Paesaggi",
@@ -1402,7 +1402,7 @@
     },
     {
       "id": "054c46d1",
-      "num": 1402,
+      "num": 1237,
       "title": "BALI",
       "cover": "054c46d1.Immagine.191047.jpg",
       "deck": "054c46d1.Mazzo.185135.jpg",
@@ -1416,7 +1416,7 @@
     },
     {
       "id": "5434b423",
-      "num": 1416,
+      "num": 1236,
       "title": "BALI",
       "cover": "5434b423.Immagine.192931.jpg",
       "deck": null,
@@ -1458,7 +1458,7 @@
     },
     {
       "id": "9c430fd2",
-      "num": 1331,
+      "num": 1242,
       "title": "BANCA DEL MONTE",
       "cover": "9c430fd2.Immagine.153936.jpg",
       "deck": "9c430fd2.Mazzo.210444.jpg",
@@ -1696,7 +1696,7 @@
     },
     {
       "id": "7fb521be",
-      "num": 1455,
+      "num": 1232,
       "title": "BARBADOS",
       "cover": "7fb521be.Immagine.190429.jpg",
       "deck": "7fb521be.Mazzo.191313.jpg",
@@ -2086,20 +2086,6 @@
       "country": "Stati Uniti d'America",
       "categoryCode": "38dbcf94",
       "category": "Storia e Personaggi",
-      "type": "POKER",
-      "usState": "",
-      "trivia": null
-    },
-    {
-      "id": "9126a9ed",
-      "num": 1442,
-      "title": "BLACK POKER",
-      "cover": "9126a9ed.Immagine.145520.jpg",
-      "deck": null,
-      "continent": "Asia",
-      "country": "Cina",
-      "categoryCode": "b6152b31",
-      "category": "Arte e Cultura",
       "type": "POKER",
       "usState": "",
       "trivia": null
@@ -2936,7 +2922,7 @@
     },
     {
       "id": "c6f5d51c",
-      "num": 1352,
+      "num": 1246,
       "title": "CARDHU MALT WHISKY",
       "cover": "c6f5d51c.Immagine.111725.jpg",
       "deck": "c6f5d51c.Mazzo.212628.jpg",
@@ -3015,7 +3001,7 @@
     },
     {
       "id": "3a5df0a1",
-      "num": 1390,
+      "num": 1239,
       "title": "CASANIS ANISETTE",
       "cover": "3a5df0a1.Immagine.144250.jpg",
       "deck": "3a5df0a1.Mazzo.201701.jpg",
@@ -3510,7 +3496,7 @@
     },
     {
       "id": "d73527aa",
-      "num": 1446,
+      "num": 1231,
       "title": "CHIVAS REGAL",
       "cover": "d73527aa.Immagine.130937.jpg",
       "deck": "d73527aa.Mazzo.212304.jpg",
@@ -3776,7 +3762,7 @@
     },
     {
       "id": "31d7d1ca",
-      "num": 1370,
+      "num": 1240,
       "title": "COCA COLA NORDIC",
       "cover": "31d7d1ca.Immagine.165906.jpg",
       "deck": "31d7d1ca.Mazzo.205609.jpg",
@@ -4554,7 +4540,7 @@
     },
     {
       "id": "0bdb7ea1",
-      "num": 1403,
+      "num": 1235,
       "title": "DERMOLAB",
       "cover": "0bdb7ea1.Immagine.191148.jpg",
       "deck": "0bdb7ea1.Mazzo.220307.jpg",
@@ -5617,7 +5603,7 @@
     },
     {
       "id": "f5433e2e",
-      "num": 1330,
+      "num": 1244,
       "title": "FIART",
       "cover": "f5433e2e.Immagine.153616.jpg",
       "deck": "f5433e2e.Mazzo.203330.jpg",
@@ -6354,20 +6340,6 @@
       "categoryCode": "38dbcf94",
       "category": "Storia e Personaggi",
       "type": "RIPRODUZIONE DAL MUSEO FOURNIER",
-      "usState": "",
-      "trivia": null
-    },
-    {
-      "id": "436f701e",
-      "num": 1361,
-      "title": "GIOCO' A COLORI",
-      "cover": "436f701e.Immagine.193118.jpg",
-      "deck": "436f701e.Mazzo.214933.jpg",
-      "continent": "Europa",
-      "country": "Italia",
-      "categoryCode": "b6152b31",
-      "category": "Arte e Cultura",
-      "type": "RAMINO",
       "usState": "",
       "trivia": null
     },
@@ -9299,7 +9271,7 @@
     },
     {
       "id": "50db6346",
-      "num": 1430,
+      "num": 1234,
       "title": "LENNIK",
       "cover": "50db6346.Immagine.171443.jpg",
       "deck": "50db6346.Mazzo.184233.jpg",
@@ -10264,7 +10236,7 @@
     },
     {
       "id": "f0d9af97",
-      "num": 1388,
+      "num": 1241,
       "title": "MARIE BRIZARD",
       "cover": "f0d9af97.Immagine.143647.jpg",
       "deck": "f0d9af97.Mazzo.200501.jpg",
@@ -12367,7 +12339,7 @@
     },
     {
       "id": "a12d637b",
-      "num": 1409,
+      "num": 1233,
       "title": "OFFLEY",
       "cover": "a12d637b.Immagine.191839.jpg",
       "deck": "a12d637b.Mazzo.211058.jpg",
