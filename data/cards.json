@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-28T09:23:13.943Z",
-  "count": 1261,
+  "generatedAt": "2026-11-01T10:11:04.382Z",
+  "count": 1263,
   "categories": {
     "az3": "Pubblicità e Aziende",
     "994a3300": "Turismo e Paesaggi",
@@ -8230,6 +8230,20 @@
       "trivia": null
     },
     {
+      "id": "0c5e6929",
+      "num": 1252,
+      "title": "KEM BICENTENARIO USA",
+      "cover": "0c5e6929.Copertina.181847.jpg",
+      "deck": "0c5e6929.Mazzo.182031.jpg",
+      "continent": "Americhe",
+      "country": "Las Vegas, Nevada, Stati Uniti d'America",
+      "categoryCode": "b6152b31",
+      "category": "Arte e Cultura",
+      "type": "Ramino",
+      "usState": "",
+      "trivia": null
+    },
+    {
       "id": "1e6ea064",
       "num": 112,
       "title": "KENTUCKY",
@@ -13323,6 +13337,20 @@
       "categoryCode": "7fd4fd31",
       "category": "Aviazione e Trasporti",
       "type": "POKER",
+      "usState": "",
+      "trivia": null
+    },
+    {
+      "id": "5b503e64",
+      "num": 1253,
+      "title": "PICASSO",
+      "cover": "5b503e64.Copertina.181523.jpg",
+      "deck": "5b503e64.Mazzo.181523.jpg",
+      "continent": "Europa",
+      "country": "Austria",
+      "categoryCode": "az7",
+      "category": "Monumenti e Architettura",
+      "type": "Ramino Piatnik",
       "usState": "",
       "trivia": null
     },
