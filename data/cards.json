@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-01T10:11:04.382Z",
-  "count": 1263,
+  "generatedAt": "2026-11-08T09:56:03.193Z",
+  "count": 1264,
   "categories": {
     "az3": "Pubblicità e Aziende",
     "994a3300": "Turismo e Paesaggi",
@@ -2428,7 +2428,7 @@
     },
     {
       "id": "32db288f",
-      "num": 1385,
+      "num": 1257,
       "title": "BRUGGES",
       "cover": "32db288f.Immagine.161826.jpg",
       "deck": "32db288f.Mazzo.220707.jpg",
@@ -3580,7 +3580,7 @@
     },
     {
       "id": "c17e9f51",
-      "num": 1277,
+      "num": 1264,
       "title": "CIMALPES SKY",
       "cover": "c17e9f51.Immagine.170450.jpg",
       "deck": "c17e9f51.Mazzo.213235.jpg",
@@ -5686,6 +5686,20 @@
       "trivia": null
     },
     {
+      "id": "901413d4",
+      "num": 717,
+      "title": "FIGC",
+      "cover": "901413d4.Copertina.210138.jpg",
+      "deck": "901413d4.Mazzo.210138.jpg",
+      "continent": "Europa",
+      "country": "Italia",
+      "categoryCode": "7496aab6",
+      "category": "Sport",
+      "type": "Ramino Masenghini",
+      "usState": "",
+      "trivia": null
+    },
+    {
       "id": "af2eaebb",
       "num": 932,
       "title": "FILOU BIER",
@@ -5841,7 +5855,7 @@
     },
     {
       "id": "5fc1d2bb",
-      "num": 1435,
+      "num": 1256,
       "title": "FONDAZIONE CHARCOT",
       "cover": "5fc1d2bb.Immagine.134050.jpg",
       "deck": "5fc1d2bb.Mazzo.211113.jpg",
@@ -7114,7 +7128,7 @@
     },
     {
       "id": "86d77c05",
-      "num": 1287,
+      "num": 1261,
       "title": "HEIDSIECK & C",
       "cover": "86d77c05.Immagine.204546.jpg",
       "deck": "86d77c05.Mazzo.210207.jpg",
@@ -7998,7 +8012,7 @@
     },
     {
       "id": "512ab52f",
-      "num": 1269,
+      "num": 1266,
       "title": "JEU DE L'AN 2",
       "cover": "512ab52f.Immagine.210056.jpg",
       "deck": "512ab52f.Mazzo.163902.jpg",
@@ -12838,7 +12852,7 @@
     },
     {
       "id": "d0d1e6a4",
-      "num": 1348,
+      "num": 1258,
       "title": "OVOPOKER",
       "cover": "d0d1e6a4.Immagine.104724.jpg",
       "deck": "d0d1e6a4.Mazzo.170539.jpg",
@@ -16239,7 +16253,7 @@
     },
     {
       "id": "cec8c76b",
-      "num": 1270,
+      "num": 1265,
       "title": "THERAMEX",
       "cover": "cec8c76b.Immagine.214516.jpg",
       "deck": "cec8c76b.Mazzo.162059.jpg",
@@ -16267,7 +16281,7 @@
     },
     {
       "id": "3fd3fc16",
-      "num": 1282,
+      "num": 1263,
       "title": "TIGOTA'",
       "cover": "3fd3fc16.Immagine.204529.jpg",
       "deck": "3fd3fc16.Mazzo.203135.jpg",
@@ -16831,7 +16845,7 @@
     },
     {
       "id": "afc36e34",
-      "num": 1296,
+      "num": 1260,
       "title": "UIL PENSIONATI",
       "cover": "afc36e34.Immagine.205326.jpg",
       "deck": "afc36e34.Mazzo.212606.jpg",
@@ -17834,7 +17848,7 @@
     },
     {
       "id": "8a6f35ec",
-      "num": 1305,
+      "num": 1259,
       "title": "WUBER",
       "cover": "8a6f35ec.Immagine.204847.jpg",
       "deck": "8a6f35ec.Mazzo.091453.jpg",
