@@ -169,6 +169,13 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; mar
 .hero h1 em { font-style: italic; color: var(--green); }
 .hero .lead { margin: 1.3rem 0 0; max-width: 54ch; color: var(--ink-soft); font-size: 1.08rem; }
 .hero .rule-suits { margin-top: 2rem; max-width: 480px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 380px); gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center; }
+.hero-img { margin: 0; }
+.hero-img img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-img { max-width: 420px; }
+}
 
 /* ---------- Statistiche ---------- */
 .stats {
