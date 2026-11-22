@@ -1,0 +1,96 @@
+<!-- ===========================================================================
+  MAPPA  (templates/mappa.html -> dist/mappa/ e dist/en/mappa/)
+  Mappa navigabile: mondo -> continente -> nazione (-> stati USA) -> elenco carte.
+  La mappa (SVG) è disegnata da assets/js/mappa.js con assets/data/map.json
+  (generato da scripts/make-map.mjs). Senza JavaScript resta l'elenco statico.
+  Token: t, siteTitle, year, count, base, home, altUrl, altFlag, altName, altTitle,
+  locale, i18nJson, mapNames, elenco (continenti con nazioni e conteggi, già tradotti).
+  ============================================================================ -->
+<link rel="stylesheet" href="{{base}}assets/css/style.css">
+<script>
+  (function () { try { var t = localStorage.getItem("cc-theme");
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {} })();
+</script>
+
+<!--BODY-->
+<!-- ===== Header ===== -->
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{home}}">
+      <span class="mark">&#9824;</span>
+      <span class="name">{{t.brandA}} <b>{{t.brandB}}</b></span>
+    </a>
+    <nav class="site-nav">
+      <a href="{{home}}">{{t.navHome}}</a>
+      <a href="{{home}}catalogo/">{{t.navCatalog}}</a>
+      <a href="{{home}}mappa/" aria-current="page">{{t.navMap}}</a>
+      <a class="lang-switch" href="{{altUrl}}" title="{{t.altTitle}}">
+        <span class="flag" aria-hidden="true">{{t.altFlag}}</span><span class="lbl">{{t.altName}}</span>
+      </a>
+      <button class="theme-toggle" type="button" aria-label="{{t.themeToggle}}">&#9681;</button>
+    </nav>
+  </div>
+</header>
+
+<main id="mappa"
+      data-base="{{base}}"
+      data-home="{{home}}"
+      data-locale="{{locale}}"
+      data-i18n="{{i18nJson}}"
+      data-names="{{mapNames}}">
+  <section class="catalog-head">
+    <div class="wrap">
+      <p class="eyebrow">{{t.mapEyebrow}}</p>
+      <h1>{{t.mapH1}}</h1>
+      <p>{{t.mapLead}}</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <nav class="map-crumbs" id="crumbs" aria-label="{{t.mapH1}}"></nav>
+
+    <div class="map-stage">
+      <svg id="map" role="group" aria-label="{{t.mapH1}}" viewBox="-180 -180 370 360" preserveAspectRatio="xMidYMid meet"></svg>
+    </div>
+    <p class="map-note" id="map-note"></p>
+
+    <aside id="map-panel" class="map-panel" hidden>
+      <div class="map-panel-head">
+        <h2 id="panel-title"></h2>
+        <span id="panel-count" class="map-panel-count"></span>
+        <button id="panel-close" class="btn-reset" type="button">{{t.mapClose}}</button>
+      </div>
+      <div id="panel-grid" class="deck-grid"></div>
+      <p class="map-panel-link"><a id="panel-link" class="link" href="#"></a></p>
+    </aside>
+
+    <section class="map-list" aria-labelledby="list-title">
+      <h2 id="list-title">{{t.mapListTitle}}</h2>
+      <p class="map-note">{{t.mapNoScript}}</p>
+      {{#elenco}}
+      <div class="map-list-group">
+        <h3>{{nome}} <span>{{n}}</span></h3>
+        <ul>{{#nazioni}}<li><a href="{{href}}">{{nome}} <b>{{n}}</b></a></li>{{/nazioni}}</ul>
+      </div>
+      {{/elenco}}
+    </section>
+
+    <p class="map-credit">{{t.mapCredit}}</p>
+  </div>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <a class="brand" href="{{home}}">
+      <span class="mark" style="color:var(--green)">&#9824;</span>
+      <span class="name">{{siteTitle}}</span>
+    </a>
+    <span class="suits"><span class="s-blk">&#9824;</span> <span class="s-red">&#9829;</span> <span class="s-red">&#9830;</span> <span class="s-blk">&#9827;</span></span>
+    <p>{{count}} {{t.footerDecks}} &middot; &copy; {{year}} &middot; {{t.footerPrivate}}</p>
+  </div>
+</footer>
+
+<script src="{{base}}assets/js/theme.js"></script>
+<script src="{{base}}assets/js/mappa.js"></script>

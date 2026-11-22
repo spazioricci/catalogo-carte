@@ -6,9 +6,13 @@ import {
 } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join, relative } from "node:path";
-import { LANGS, langDir, UI, translateDataset } from "./i18n.mjs";
+import { LANGS, langDir, UI, translateDataset, tCountry, tContinent } from "./i18n.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
+
+// Nazione (nome italiano) -> ISO3 e continente della mappa. Vedi data/country-iso.json.
+const COUNTRY_ISO = JSON.parse(readFileSync(join(ROOT, "data", "country-iso.json"), "utf-8"));
+const MAP_CONTINENTS = ["Europa", "Americhe", "Asia", "Africa", "Oceania"];
 
 // ---------------------------------------------------------------------------
 // Renderer mini-Mustache — supporta SOLO ciò che indica il CONTRACT:
@@ -222,7 +226,7 @@ export function build({ tplDir, distDir, dataFile, assetsDir } = {}) {
   dataFile = dataFile || join(ROOT, "data", "cards.json");
   assetsDir = assetsDir || join(ROOT, "assets");
 
-  const need = ["index.html", "catalogo.html", "mazzo.html"];
+  const need = ["index.html", "catalogo.html", "mazzo.html", "mappa.html"];
   const missing = need.filter((f) => !existsSync(join(tplDir, f)));
   if (missing.length) {
     throw Object.assign(
@@ -237,6 +241,7 @@ export function build({ tplDir, distDir, dataFile, assetsDir } = {}) {
   const tplIndex = readFileSync(join(tplDir, "index.html"), "utf-8");
   const tplCat = readFileSync(join(tplDir, "catalogo.html"), "utf-8");
   const tplMazzo = readFileSync(join(tplDir, "mazzo.html"), "utf-8");
+  const tplMappa = readFileSync(join(tplDir, "mappa.html"), "utf-8");
 
   // Pulizia output
   if (existsSync(distDir)) rmSync(distDir, { recursive: true, force: true });
@@ -303,6 +308,38 @@ export function build({ tplDir, distDir, dataFile, assetsDir } = {}) {
       wrapPage(render(tplCat, catCtx), { title: `${t.catalogTitle} — ${t.siteTitle}`, ...pCat }));
     pages++;
 
+    // --- MAPPA (guscio + elenco statico; la mappa la disegna assets/js/mappa.js) ---
+    const pMap = paths("mappa/", lang);
+    const cardsByCountry = new Map();
+    for (const c of cards) if (c.country) cardsByCountry.set(c.country, (cardsByCountry.get(c.country) || 0) + 1);
+    const mapNames = { countries: {}, continents: {} };
+    const groups = new Map(MAP_CONTINENTS.map((k) => [k, { nome: tContinent(k, lang), n: 0, nazioni: [] }]));
+    for (const [name, meta] of Object.entries(COUNTRY_ISO)) {
+      if (name.startsWith("_")) continue;
+      const display = tCountry(name, lang);
+      mapNames.countries[name] = display;
+      const n = cardsByCountry.get(display) || 0;
+      if (!n) continue;
+      const g = groups.get(meta.continent);
+      g.n += n;
+      g.nazioni.push({ nome: display, n, href: `${pMap.home}catalogo/?nazione=${encodeURIComponent(display)}` });
+    }
+    for (const k of MAP_CONTINENTS) mapNames.continents[k] = tContinent(k, lang);
+    const elenco = [...groups.values()]
+      .filter((g) => g.n > 0)
+      .map((g) => ({ ...g, nazioni: g.nazioni.sort((a, b) => b.n - a.n || a.nome.localeCompare(b.nome, t.locale)) }));
+    const mapCtx = {
+      ...common,
+      ...pMap,
+      i18nJson: JSON.stringify(t.js),
+      locale: t.locale,
+      mapNames: JSON.stringify(mapNames),
+      elenco,
+    };
+    writePage(outDir, join("mappa", "index.html"),
+      wrapPage(render(tplMappa, mapCtx), { title: `${t.mapTitle} — ${t.siteTitle}`, ...pMap }));
+    pages++;
+
     // --- SCHEDE MAZZO ---
     for (let i = 0; i < cards.length; i++) {
       const card = cards[i];
@@ -334,7 +371,7 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   try {
     const r = build();
     console.log(`OK  ${r.pages} pagine generate in ${relative(ROOT, r.distDir) || r.distDir}`);
-    console.log(`    lingue: ${r.langs.join(", ")} | per lingua: home + catalogo + ${r.cardPages} schede mazzo`);
+    console.log(`    lingue: ${r.langs.join(", ")} | per lingua: home + catalogo + mappa + ${r.cardPages} schede mazzo`);
     console.log(`    ${r.nAssets} file asset copiati (condivisi fra le lingue)`);
   } catch (e) {
     if (e.code === "NO_TEMPLATES") { console.error(`ATTENZIONE  ${e.message}`); process.exit(1); }

@@ -33,6 +33,7 @@ Usare `{{base}}` per un link interno porterebbe l'utente inglese sulla pagina it
 | home              | `""` / `""`       | `"../"` / `""`         |
 | `catalogo/`       | `"../"` / `"../"` | `"../../"` / `"../"`   |
 | `mazzo/<id>/`     | `"../../"` × 2    | `"../../../"` / `"../../"` |
+| `mappa/`          | `"../"` / `"../"` | `"../../"` / `"../"`   |
 
 ## Percorsi immagine (relativi alla root del sito servito)
 - Copertina piena: `{{base}}assets/img/full/<cover>` — thumbnail: `{{base}}assets/img/thumb/<cover>`
@@ -66,6 +67,16 @@ un contenitore `<div id="grid"></div>` e un contatore risultati `<span id="count
 `catalogo.js` è un unico file per entrambe le lingue: legge quel che gli serve dagli attributi di
 `#catalog` → `data-base`, `data-home`, `data-locale`, `data-i18n` (JSON di `t.js`, token `{{i18nJson}}`).
 Nessuna variabile card server-side qui.
+
+### templates/mappa.html (→ dist/mappa/ e dist/en/mappa/)
+Mappa navigabile: mondo → continente → nazione (per gli USA: stati) → pannello con le carte.
+La mappa SVG la disegna `assets/js/mappa.js` da `assets/data/map.json` (generato una tantum da
+`scripts/make-map.mjs` con i confini Natural Earth, dominio pubblico). Stato in URL:
+`#europa`, `#europa/italia`, `#americhe/stati-uniti-d-america/california` (slug dei nomi italiani).
+Token server-side: `mapNames` (JSON nomi tradotti di paesi e continenti), `elenco` (elenco statico per
+nazione con `href` già codificati, per chi non ha JavaScript), `i18nJson`, `locale`.
+La mappa conta le carte per **nazione** (non per il campo `continent` della carta): il continente di
+ogni nazione sta in `data/country-iso.json`. Le carte senza nazione restano fuori dalla mappa.
 
 ### templates/mazzo.html (→ dist/mazzo/<id>/ e dist/en/mazzo/<id>/, una per card)
 Contesto = una CARD con i campi (nella build inglese `continent`, `country` e `category`

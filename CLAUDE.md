@@ -127,8 +127,11 @@ Non va impostata da codice: `actions/configure-pages` ha un'opzione `enablement:
 - **`{{base}}` ≠ `{{home}}`**: `base` è la radice del *sito* (solo asset, condivisi fra le lingue),
   `home` la radice della *lingua* (tutti i link interni e `data/cards.json`). Usare `base` per un
   link interno spedisce il lettore inglese sulla pagina italiana.
-- Pagine generate: `dist/index.html`, `dist/catalogo/index.html`, `dist/mazzo/<id>/index.html`
-  (e le stesse sotto `dist/en/`).
+- Pagine generate: `dist/index.html`, `dist/catalogo/index.html`, `dist/mappa/index.html`,
+  `dist/mazzo/<id>/index.html` (e le stesse sotto `dist/en/`).
+- Mappa: il continente di una carta sulla mappa è quello della **nazione** (`data/country-iso.json`),
+  non il campo `continent` del foglio (incoerente per Turchia, Marocco, Cina, Algeria). I confini
+  (`assets/data/map.json`) si rigenerano a mano con `node scripts/make-map.mjs` (non in CI).
 - Il filtraggio/ricerca del catalogo è **lato client** leggendo il `cards.json` della lingua.
 
 ## Mapping categorie (ipotesi, correggibili in data/categories.json)

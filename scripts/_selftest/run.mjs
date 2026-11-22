@@ -40,9 +40,10 @@ const r = build({
   dataFile: join(HERE, "..", "..", "data", "cards.json"),
   assetsDir: join(HERE, "..", "..", "assets"),
 });
-ok(r.pages === r.cardPages + 2, `pagine totali = schede+2 (home+catalogo): ${r.pages} vs ${r.cardPages}+2`);
+ok(r.pages === r.langs.length * (r.cardPages + 3), `pagine totali = lingue*(schede+3: home+catalogo+mappa): ${r.pages} vs ${r.langs.length}*(${r.cardPages}+3)`);
 ok(existsSync(join(distDir, "index.html")), "dist/index.html esiste");
 ok(existsSync(join(distDir, "catalogo", "index.html")), "dist/catalogo/index.html esiste");
+ok(existsSync(join(distDir, "mappa", "index.html")), "dist/mappa/index.html esiste");
 ok(existsSync(join(distDir, "data", "cards.json")), "dist/data/cards.json copiato");
 ok(!existsSync(join(distDir, "data", "source.csv")), "source.csv NON copiato (privacy)");
 ok(!existsSync(join(distDir, "data", "categories.json")), "categories.json NON copiato");
